@@ -1,0 +1,6 @@
+.top-bar
+  .top-bar-title
+    /span.text-right data-responsive-toggle="responsive-menu" data-hide-for="medium"
+      /span.menu-icon.dark data-toggle=""
+    strong
+      | [Ed] Materializer
