@@ -1,1 +1,2 @@
-= top-nav
+= app-canvas
+  = top-nav

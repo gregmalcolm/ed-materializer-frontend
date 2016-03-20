@@ -1,6 +1,15 @@
 .top-bar
   .top-bar-title
-    /span.text-right data-responsive-toggle="responsive-menu" data-hide-for="medium"
-      /span.menu-icon.dark data-toggle=""
+    span data-responsive-toggle="responsive-menu" data-hide-for="medium"
+      span.menu-icon data-toggle="data-toggle"
     strong
       | [Ed] Materializer
+  #responsive-menu
+    .top-bar-right
+      ul.menu
+        li
+          button.button
+            | Sign in
+        li
+          button.button.alert
+            | Sign up
