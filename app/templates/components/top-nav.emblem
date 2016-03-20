@@ -12,7 +12,7 @@
       else
         ul.menu
           li
-            = link-to 'sign-in' 
+            = link-to 'sign-in' class="button" 
               | Sign in
           li
             button.button.alert

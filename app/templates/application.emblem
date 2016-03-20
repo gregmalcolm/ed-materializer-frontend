@@ -1,2 +1,3 @@
 = app-canvas
   = top-nav
+  = outlet
