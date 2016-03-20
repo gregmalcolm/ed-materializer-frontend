@@ -1,4 +1,4 @@
-# Materializer (Web Frontend_)
+# Materializer (Web Frontend)
 
 Materializer is a web app and API for gathering material prospecting data
 for the game Elite: Dangerous.
