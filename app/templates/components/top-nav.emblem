@@ -6,10 +6,14 @@
       | [Ed] Materializer
   #responsive-menu
     .top-bar-right
-      ul.menu
-        li
-          button.button
-            | Sign in
-        li
-          button.button.alert
-            | Sign up
+      if session.isAuthenticated
+        = link-to 'protected' Protected
+        button {action 'invalidateSession'} Logout
+      else
+        ul.menu
+          li
+            = link-to 'sign-in' 
+              | Sign in
+          li
+            button.button.alert
+              | Register
