@@ -8,7 +8,9 @@ export default Ember.Service.extend({
       json = json.errors;
     }
 
-    if (typeof json === "string" || json instanceof String) {
+    if (json instanceof Array) {
+      return this._errorsInArrayAsText(json);
+    } if (typeof json === "string" || json instanceof String) {
       return json;
     } else {
       return this._errorsInHashAsText(json);
@@ -16,16 +18,35 @@ export default Ember.Service.extend({
   },
 
   _errorsInHashAsText(hash) {
-    let text = "";
-    Object.keys(hash).forEach(function(key) {
-      text += "<p>";
+    let lines = [];
+    Object.keys(hash).forEach((key)=> {
+      let html = ""
       if (key !== "error" && key !== "base") {
-        text += _.titleize(key);
+        html += this._titleize(key);
       }
-      text += `${hash[key]}</p>`;
+      html += `${hash[key]}`;
+      lines.push(html);
     });
 
-    return text;
+    return this._errorsInArrayAsText(lines);
+  },
+
+  _errorsInArrayAsText(lines) {
+    if (lines && lines.length > 0) {
+      return lines.map( function(line) {
+        return `<p>${line}</p>`;
+      });
+    } else {
+      return "";
+    }
+  },
+
+  _titleize(str) {
+    if (str && str.length > 0) {
+      return `${str[0]}${str.slice(1)}`;
+    } else {
+      return "";
+    }
   },
 
   failure(xhr) {
