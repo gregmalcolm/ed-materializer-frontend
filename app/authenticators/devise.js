@@ -43,7 +43,7 @@ export default DeviseAuthenticator.extend({
 
         run(null, resolve, result);
       }, function(xhr) {
-        run(null, reject, xhr.responseJSON || xhr.responseText);
+        run(null, reject, xhr);
       });
     });
   },

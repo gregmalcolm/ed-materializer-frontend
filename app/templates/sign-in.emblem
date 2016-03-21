@@ -7,5 +7,5 @@ div.sign-in-panel
     label Password
     = input value=password type="password"
     .text-center
-      button.button.text-center type="submit" 
+      button.button type="submit" 
         | Sign in

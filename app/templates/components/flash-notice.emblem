@@ -1,0 +1,3 @@
+= if flashes.errors
+  .alert.callout.text-center
+    == flashes.errors
