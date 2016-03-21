@@ -4,7 +4,10 @@ import Ember from 'ember';
 const { RSVP, isEmpty, run } = Ember;
 
 export default DeviseAuthenticator.extend({
-  serverTokenEndpoint: '/auth/sign_in',
+  authPath: '/auth',
+  serverTokenEndpoint: Ember.computed("authPath", function() {
+    return `${this.get("authPath")}/sign_in`
+  }),
 
   restore(data){
     return new RSVP.Promise((resolve, reject) => {
@@ -44,4 +47,11 @@ export default DeviseAuthenticator.extend({
       });
     });
   },
+
+  invalidate() {
+    return Ember.$.ajax({
+      url: "#{this.authPath}/sign_out",
+      type: 'DELETE'
+    });
+  }
 });

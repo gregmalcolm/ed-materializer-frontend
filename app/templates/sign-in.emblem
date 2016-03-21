@@ -1,10 +1,11 @@
 div.sign-in-panel
-  h2 Sign in to Materializer
+  h2 Sign in Commander
   
   form{action 'authenticate' on="submit"}
-    | Email: 
-    = input value=email type="text"
-    | Password: 
+    label Email
+    = input value=email type="text" placeholder="jameson@founders.net"
+    label Password
     = input value=password type="password"
-    button.button type="submit" 
-      | Submit
+    .text-center
+      button.button.text-center type="submit" 
+        | Sign in

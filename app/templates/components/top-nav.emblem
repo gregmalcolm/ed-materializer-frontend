@@ -1,16 +1,20 @@
 .top-bar
   .top-bar-title
-    span data-responsive-toggle="responsive-menu" data-hide-for="medium"
+    span.hamburger data-responsive-toggle="responsive-menu" data-hide-for="medium"
       span.menu-icon data-toggle="data-toggle"
     strong
-      | [Ed] Materializer
+      = link-to 'index' 
+        | [Ed] Materializer
   #responsive-menu
     .top-bar-right
-      if session.isAuthenticated
-        = link-to 'protected' Protected
-        button {action 'invalidateSession'} Logout
-      else
-        ul.menu
+      ul.menu
+        if session.isAuthenticated
+          li
+            = link-to 'protected' Protected
+          li
+            button{action 'invalidateSession'} class="button" 
+              | Logout
+        else
           li
             = link-to 'sign-in' class="button" 
               | Sign in
