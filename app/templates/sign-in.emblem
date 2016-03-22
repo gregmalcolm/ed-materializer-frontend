@@ -1,11 +1,11 @@
 .sign-in-content
   h2 Sign in Commander
   
-  form{action 'authenticate' on="submit"}
+  form{action 'authenticate' on='submit'}
     label Email
-    = input value=email type="text" placeholder="jameson@founders.net"
+    = input value=email type='text' placeholder='jameson@founders.net' autofocus=true
     label Password
-    = input value=password type="password"
+    = input value=password type='password' autocomplete='off'
     .text-center
-      button.button type="submit" 
+      button.button type='submit' 
         | Sign in

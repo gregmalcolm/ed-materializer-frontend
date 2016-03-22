@@ -19,5 +19,5 @@
             = link-to 'sign-in' class="button" 
               | Sign in
           li
-            button.button.alert
+            = link-to 'register' class="button alert" 
               | Register
