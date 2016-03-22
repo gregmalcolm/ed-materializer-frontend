@@ -1,4 +1,4 @@
-div.sign-in-panel
+.sign-in-content
   h2 Sign in Commander
   
   form{action 'authenticate' on="submit"}
