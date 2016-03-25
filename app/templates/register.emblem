@@ -1,7 +1,7 @@
 .sign-in-content
   h2 CMDR Registration
   
-  form{action 'register' on='submit'}
+  form{action 'signUp' on='submit'}
     label Commander Name
     = input value=name type='text' placeholder="Jameson" autofocus=true
     label Email
@@ -11,7 +11,7 @@
     p.help-text
       | Please don't reuse your Elite Dangerous account password here :)
     label Password Confirmation
-    = input values=passwordConfirmation autocomplete='off'
+    = input values=passwordConfirmation type='password' autocomplete='off'
     .text-center
       button.button type="submit" 
         | Sign up

@@ -35,10 +35,10 @@ export default DeviseAuthenticator.extend({
         //when making an authorized API call
         var result = {
           accessToken: xhr.getResponseHeader('access-token'),
-          expiry: xhr.getResponseHeader('expiry'),
-          tokenType: xhr.getResponseHeader('token-type'),
-          uid: xhr.getResponseHeader('uid'),
-          client: xhr.getResponseHeader('client')
+          expiry:      xhr.getResponseHeader('expiry'),
+          tokenType:   xhr.getResponseHeader('token-type'),
+          uid:         xhr.getResponseHeader('uid'),
+          client:      xhr.getResponseHeader('client')
         };
 
         run(null, resolve, result);

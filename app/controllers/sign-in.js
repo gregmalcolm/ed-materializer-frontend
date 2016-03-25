@@ -2,15 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
-  application: Ember.inject.controller('application'),
   flash: Ember.inject.service('flash'),
 
   _accept: function(model) {
   },
 
   _reject: function(reason) {
-    this.get("flash")
-        .failure(reason);
+    this.get("flash").failure(reason);
   },
 
   actions: {

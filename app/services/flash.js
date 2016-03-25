@@ -49,6 +49,12 @@ export default Ember.Service.extend({
     }
   },
 
+  latestErrors: Ember.computed("errors", function() {
+    let errors = this.get("errors");
+    this.set("errors", null);
+    return errors;
+  }),
+
   failure(xhr) {
     let errors;
     if (xhr.responseJSON) {

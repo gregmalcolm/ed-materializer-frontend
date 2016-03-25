@@ -1,5 +1,4 @@
 = app-canvas
   = top-nav
-  /= flash-notice flashes=flashes
   = flash-notice
   = outlet
