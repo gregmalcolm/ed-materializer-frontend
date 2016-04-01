@@ -48,7 +48,7 @@ $white: #fefefe;
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
-$primary-color: #2199e8;
+$primary-color: $foundation-primary-color;
 $secondary-color: #777;
 $success-color: #3adb76;
 $warning-color: #ffae00;

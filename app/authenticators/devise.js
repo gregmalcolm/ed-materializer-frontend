@@ -6,7 +6,7 @@ const { RSVP, isEmpty, run } = Ember;
 export default DeviseAuthenticator.extend({
   authPath: '/auth',
   serverTokenEndpoint: Ember.computed("authPath", function() {
-    return `${this.get("authPath")}/sign_in`
+    return `${this.get("authPath")}/sign_in`;
   }),
 
   restore(data){

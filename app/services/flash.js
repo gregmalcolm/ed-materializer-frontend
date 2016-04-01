@@ -8,34 +8,41 @@ export default Ember.Service.extend({
       json = json.errors;
     }
 
-    if (json instanceof Array) {
-      return this._errorsInArrayAsText(json);
-    } if (typeof json === "string" || json instanceof String) {
+    if (typeof json === "string" || json instanceof String) {
       return json;
     } else {
-      return this._errorsInHashAsText(json);
+      if (!(json instanceof Array)) {
+        json = this._errorsInObjectAsArray(json);
+      }
+
+      return this._errorsInArrayAsHtml(json);
     }
   },
 
-  _errorsInHashAsText(hash) {
-    let lines = [];
-    Object.keys(hash).forEach((key)=> {
-      let html = ""
-      if (key !== "error" && key !== "base") {
-        html += this._titleize(key);
-      }
-      html += `${hash[key]}`;
-      lines.push(html);
-    });
+  _errorsInObjectAsArray(hash) {
+    if (hash['full_messages']) {
+      return hash['full_messages']
+    }
+    else
+    {
+      let items = [];
 
-    return this._errorsInArrayAsText(lines);
+      Object.keys(hash).forEach((key)=> {
+        let prefix = "";
+        if (key !== "error" && key !== "base") {
+          prefix = this._titleize(key);
+        }
+        items.push(`${prefix} ${hash[key]}`);
+      });
+      return items;
+    }
   },
 
-  _errorsInArrayAsText(lines) {
+  _errorsInArrayAsHtml(lines) {
     if (lines && lines.length > 0) {
       return lines.map( function(line) {
         return `<p>${line}</p>`;
-      });
+      }).join("");
     } else {
       return "";
     }
@@ -43,7 +50,7 @@ export default Ember.Service.extend({
 
   _titleize(str) {
     if (str && str.length > 0) {
-      return `${str[0]}${str.slice(1)}`;
+      return `${str[0].toUpperCase()}${str.slice(1)}`.replace(/_/g, ' ');
     } else {
       return "";
     }
@@ -55,16 +62,28 @@ export default Ember.Service.extend({
     return errors;
   }),
 
+  latestNotices: Ember.computed("notices", function() {
+    let notices = this.get("notices");
+    this.set("notices", null);
+    return notices;
+  }),
+
   failure(xhr) {
     let errors;
     if (xhr.responseJSON) {
       errors = this._jsonErrorsAsText(xhr.responseJSON);
     } else if (xhr.responseText) {
       errors = xhr.responseText;
+    } else if (xhr.statusText) {
+      errors = xhr.statusText;
     } else {
       errors = xhr;
     }
 
     this.set("errors", errors);
+  },
+
+  notice(message) {
+    this.set("notices", message);
   }
 });

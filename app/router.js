@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('sign-in');
   this.route('register');
   this.route('registrations', function() {
-    this.route('confirm')
+    this.route('confirm');
   });
 });
 

@@ -1,3 +1,7 @@
 = if flashes.errors
   .alert.callout.text-center
     == flashes.latestErrors
+  
+= if flashes.notices
+  .notice.callout.text-center
+    == flashes.latestNotices
