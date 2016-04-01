@@ -19,6 +19,12 @@ module.exports = function(deployTarget) {
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
     // configure other plugins for production deploy target here
+    ENV.s3 = {
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      bucket: 'elasticbeanstalk-us-east-1-354643948167',
+      region: 'us-east-1'
+    };
   }
 
   // Note: if you need to build some configuration asynchronously, you can return

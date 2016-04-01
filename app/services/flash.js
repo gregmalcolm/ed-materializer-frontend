@@ -21,7 +21,7 @@ export default Ember.Service.extend({
 
   _errorsInObjectAsArray(hash) {
     if (hash['full_messages']) {
-      return hash['full_messages']
+      return hash['full_messages'];
     }
     else
     {

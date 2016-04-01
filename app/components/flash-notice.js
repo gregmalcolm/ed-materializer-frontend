@@ -7,7 +7,7 @@ export default Ember.Component.extend({
     let errors = this.get("errors");
     this.set("errors", null);
     return errors;
-  })
+  }),
 
   latestNotices: Ember.computed("notices", function() {
     let notices = this.get("notices");
