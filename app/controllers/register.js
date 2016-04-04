@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
 
   actions: {
     signUp() {
-      Ember.$.post('/auth',
+      Ember.$.post(`${ENV.apiHostName}/auth`,
                   { name: this.get('name'),
                     email: this.get('email'),
                     password: this.get('password'),

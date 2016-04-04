@@ -6,7 +6,8 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
-    hostName: 'https://ed-materializer.herokuapp.com',
+    hostName: 'http://elasticbeanstalk-us-east-1-354643948167.s3-website-us-east-1.amazonaws.com',
+    apiHostName: 'https://ed-materializer-env.elasticbeanstalk.com',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -27,6 +28,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.hostName = 'http://localhost:4200';
+    ENV.apiHostName = 'http://localhost:3000';
   }
 
   if (environment === 'test') {
