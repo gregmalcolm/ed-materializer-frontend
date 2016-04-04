@@ -9,6 +9,12 @@ The API part can be found [here](https://github.com/gregmalcolm/ed-materializer)
 
 See the [Ember-cli Guide](http://ember-cli.com/user-guide/) for to get started.
 
+Global npms:
+* npm install bower -g
+* npm install ember -g
+* npm install figaro -g
+
+Build ember project
 * `npm install`
 * `bower install`
 * `ember s --proxy localhost:3000`
