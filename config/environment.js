@@ -7,7 +7,7 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     hostName: 'http://elasticbeanstalk-us-east-1-354643948167.s3-website-us-east-1.amazonaws.com',
-    apiHostName: 'https://ed-materializer-env.elasticbeanstalk.com',
+    apiHostName: 'http://ed-materializer-env.elasticbeanstalk.com',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
