@@ -5,9 +5,8 @@ import ENV from '../config/environment';
 const { RSVP, isEmpty, run } = Ember;
 
 export default DeviseAuthenticator.extend({
-  authPath: Ember.computed('authPath', function() {
-    return `${ENV.apiHostName}/auth`;
-  }),
+  authPath: `${ENV.apiHostName}/auth`,
+
   serverTokenEndpoint: Ember.computed("authPath", function() {
     return `${this.get("authPath")}/sign_in`;
   }),
@@ -51,10 +50,16 @@ export default DeviseAuthenticator.extend({
     });
   },
 
-  invalidate() {
+  invalidate(headers) {
     return Ember.$.ajax({
       url: `${this.authPath}/sign_out`,
-      type: 'DELETE'
+      dataType: 'json',
+      type: 'DELETE',
+      data: {
+        'access-token': headers.accessToken,
+        'client': headers.client,
+        'uid': headers.uid
+      }
     });
   }
 });
