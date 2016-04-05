@@ -7,5 +7,9 @@
   */
   "disableAnalytics": false,
   "proxy": "http://localhost:3000",
-  "port": "4200"
+  "port": "4200",
+  "ember-cli-deploy": {
+    "verbose": true,
+    "progress": true
+  }
 }
