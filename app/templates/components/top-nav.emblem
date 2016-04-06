@@ -4,7 +4,10 @@
       span.menu-icon data-toggle="data-toggle"
     strong
       = link-to 'index' 
-        | [Ed] Materializer
+        span.title-main Materializer
+        '
+        span.title-suffix ALPHA
+        .title-ed Ed
   #responsive-menu
     .top-bar-right
       ul.menu
