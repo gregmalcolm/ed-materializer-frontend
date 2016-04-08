@@ -22,7 +22,7 @@ module.exports = function(deployTarget) {
     ENV.s3 = {
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
       secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-      bucket: 'elasticbeanstalk-us-east-1-354643948167',
+      bucket: 'edmaterializer.com',
       region: 'us-east-1',
       filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,html}'
     };
