@@ -2,7 +2,7 @@ import ActiveModelAdapter from 'active-model-adapter';
 import ENV from '../config/environment';
 
 export default ActiveModelAdapter.extend({
-  host: ENV["hostName"],
+  host: ENV["apiHostName"],
   namespace: 'api/v2'
   //headers: Ember.computed('session.authToken', function() {
     //return {
