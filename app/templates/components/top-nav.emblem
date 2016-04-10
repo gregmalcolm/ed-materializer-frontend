@@ -13,7 +13,8 @@
       ul.menu
         if session.isAuthenticated
           li
-            = link-to 'protected' Protected
+            = link-to 'protected'
+              | Protected
           li
             button{action 'invalidateSession'} class="button" 
               | Logout
