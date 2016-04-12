@@ -3,6 +3,6 @@ import ApplicationRoute from './application';
 
 export default ApplicationRoute.extend({
   model() {
-    this.store.findAll('system');
+    return this.store.query('system', {sort: 'created_at', direction: 'desc'});
   }
 });
