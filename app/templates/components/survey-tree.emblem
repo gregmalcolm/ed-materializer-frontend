@@ -1,7 +1,7 @@
 h5 Latest surveys
 
 ul
-  = each world-surveys as |survey|
+  = each worldSurveys as |survey|
     li
       = survey.world.system_name
       '
@@ -10,5 +10,5 @@ ul
       | surveyed by
       '
       = survey.surveyed_by
-      ' 
-      survey.created_at
+      /' 
+      /= moment-calendar survey.created_at

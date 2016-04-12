@@ -1,4 +1,3 @@
-import DS from 'ember-data';
 import { ActiveModelSerializer } from 'active-model-adapter';
 
 export default ActiveModelSerializer.extend({
@@ -6,7 +5,7 @@ export default ActiveModelSerializer.extend({
     payload.world.system_name = payload.world.system;
     delete payload.world.system;
 
-    return this._super(...arguments);
+    return this._super(store, primaryModelClass, payload, id, requestType);
   }
 });
 
