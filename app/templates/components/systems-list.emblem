@@ -1,6 +1,0 @@
-h5 Latest systems
-
-ul
-  =each systems as |system|
-    li
-      =system.system

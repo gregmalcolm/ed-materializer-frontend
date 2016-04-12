@@ -1,0 +1,14 @@
+h5 Latest surveys
+
+ul
+  = each world-surveys as |survey|
+    li
+      = survey.world.system_name
+      '
+      = survey.world.world
+      '
+      | surveyed by
+      '
+      = survey.surveyed_by
+      ' 
+      survey.created_at

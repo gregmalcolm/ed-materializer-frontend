@@ -10,5 +10,6 @@ export default DS.Model.extend({
   notes:     DS.attr('string'),
   image_url: DS.attr('string'),
   tags:      DS.attr(),
-  creator:   DS.attr('string')
+  creator:   DS.attr('string'),
+  worlds:    DS.hasMany('world')
 });
