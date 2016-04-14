@@ -1,7 +1,7 @@
 .top-bar
   .top-bar-title
     span.hamburger data-responsive-toggle="responsive-menu" data-hide-for="medium"
-      span.menu-icon data-toggle="data-toggle"
+      span.menu-icon.rhs-menu data-toggle="data-toggle"
     strong
       = link-to 'index' 
         span.title-main Materializer

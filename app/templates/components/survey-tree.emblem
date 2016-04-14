@@ -15,4 +15,4 @@ ul
       '
       = survey.surveyed_by
       '
-      = moment-calendar survey.created_at
+      = moment-calendar survey.surveyed_at
