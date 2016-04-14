@@ -2,8 +2,8 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   world:       DS.belongsTo('world'),
+  system:      DS.belongsTo('system'),
   updater:     DS.attr('boolean'),
-  surveyed_by: DS.attr("array"),
   updaters:    DS.attr("array"),
   carbon:      DS.attr('boolean'),
   iron:        DS.attr('boolean'),

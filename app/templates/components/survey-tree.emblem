@@ -1,14 +1,18 @@
 h5 Latest surveys
 
 ul
-  = each worldSurveys as |survey|
+  = each surveys as |survey|
     li
       = survey.world.system_name
       '
       = survey.world.world
+      | :
+      '
+      = survey.resource
+      | s
       '
       | surveyed by
       '
       = survey.surveyed_by
-      /' 
-      /= moment-calendar survey.created_at
+      '
+      = moment-calendar survey.created_at
