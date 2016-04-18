@@ -8,20 +8,24 @@
         '
         span.title-suffix ALPHA
         .title-ed Ed
+  .top-bar-left
+    ul.menu
+      li
+       
+        = input "Eg, Sol, Shinrarta, Ceeckia" class="input-group-field" value=q
+      li
+        = link-to "search" (query-params q=q) class="button" | Search 
   #responsive-menu
     .top-bar-right
       ul.menu
         if session.isAuthenticated
           li
-            = link-to 'protected'
-              | Protected
-          li
             button{action 'invalidateSession'} class="button" 
               | Logout
         else
           li
-            = link-to 'sign-in' class="button" 
+            = link-to 'sign-in' class="button with-gap" 
               | Sign in
           li
-            = link-to 'register' class="button alert" 
+            = link-to 'register' class="button alert with-gap" 
               | Register

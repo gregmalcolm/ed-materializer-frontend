@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('registrations', function() {
     this.route('confirm');
   });
+  this.route('search');
 });
 
 export default Router;
