@@ -28,6 +28,6 @@ export default DS.Model.extend({
   image_url:          DS.attr('string'),
   updaters:           DS.attr('array'),
   system:             DS.belongsTo('system'),
-  surveys:            DS.hasMany('survey'),
+  surveyz:            DS.hasMany('survey'), // Calling it "surveys" causes a javascript bug for some reason
   creator:            DS.attr('string')
 });
