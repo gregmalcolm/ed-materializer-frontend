@@ -2,8 +2,7 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   world:       DS.belongsTo('world'),
-  //basecamp:    DS.belongsTo('basecamp'),
-  system:      DS.belongsTo('system'),
+  //system:      DS.belongsTo('system'),
   commander:   DS.attr('string'),
   resource:    DS.attr('string'),
   notes:       DS.attr('string'),

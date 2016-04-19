@@ -26,9 +26,11 @@ export default DS.Model.extend({
   created_at:         DS.attr('date'),
   updated_at:         DS.attr('date'),
   image_url:          DS.attr('string'),
-  //updaters:           DS.attr('array'),
+  updaters:           DS.attr('array'),
 
   creator:            DS.attr('string'),
   system:             DS.belongsTo('system'),
-  surveyz:            DS.hasMany('survey'), // Calling it "surveys" causes a javascript bug for some reason
+  surveys:            DS.hasMany('survey'),
+  world_survey:       DS.belongsTo('world_survey'),
+  basecamps:          DS.hasMany('basecamp'),
 });
