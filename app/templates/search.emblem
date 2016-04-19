@@ -1,6 +1,9 @@
-/= ember-table hasHeader=true
+h5 Results
 
-ul
-  = each model as |system|
-    li
-      system.system
+if model
+  ul
+    each model as |system|
+      li
+        system.system
+else
+  | No Systems found matching that criteria
