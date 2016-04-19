@@ -1,1 +1,6 @@
-= outlet
+/= ember-table hasHeader=true
+
+ul
+  = each model as |system|
+    li
+      system.system
