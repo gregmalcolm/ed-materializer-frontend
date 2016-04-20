@@ -1,9 +1,16 @@
 h5 Results
 
-if model
+if model.systems
   ul
-    each model as |system|
+    = each model.systems as |system|
       li
-        system.system
+        = system.system
+        ul
+          = each star as system.stars
+            li
+              = star.star
+          = each world as system.worlds
+            li
+              = world.star
 else
   | No Systems found matching that criteria
