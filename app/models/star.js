@@ -13,7 +13,7 @@ export default DS.Model.extend({
   arrival_point:     DS.attr('number'),
   luminosity:        DS.attr('string'),
   notes:             DS.attr('string'),
-  surface_temp:      DS.attr('integer'),
+  surface_temp:      DS.attr('number'),
   created_at:        DS.attr('date'),
   updated_at:        DS.attr('date'),
   image_url:         DS.attr('string'),

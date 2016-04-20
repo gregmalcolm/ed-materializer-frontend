@@ -3,7 +3,7 @@ import ENV from '../config/environment';
 
 export default DS.JSONAPIAdapter.extend({
   host: ENV["apiHostName"],
-  namespace: 'api/v2'
+  namespace: 'api/v3'
   //headers: Ember.computed('session.authToken', function() {
     //return {
       //"API_KEY": this.get("session.authToken"),
