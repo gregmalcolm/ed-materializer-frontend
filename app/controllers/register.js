@@ -23,7 +23,7 @@ export default Ember.Controller.extend({
              .success(() => {
                this.transitionToRoute('index').then(this._accept.bind(this),this._reject.bind(this));
              })
-             .error((reason) => {
+             .fail((reason) => {
                this.get('flash').failure(reason);
              });
     }

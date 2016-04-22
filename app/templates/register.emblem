@@ -8,8 +8,6 @@
     = input value=email type='text' placeholder="jameson@founders.net"
     label Password
     = input value=password type='password' autocomplete='off'
-    p.help-text
-      | Please don't reuse your Elite Dangerous account password here :)
     label Password Confirmation
     = input values=passwordConfirmation type='password' autocomplete='off'
     .text-center

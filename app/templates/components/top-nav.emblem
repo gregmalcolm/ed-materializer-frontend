@@ -14,17 +14,20 @@
         = input "Eg, Sol, Shinrarta, Ceeckia" class="input-group-field" value=q
       li
         = link-to "search" (query-params q=q) class="button" | Search 
-  #responsive-menu
-    .top-bar-right
-      ul.menu
-        if session.isAuthenticated
-          li
-            button{action 'invalidateSession'} class="button" 
-              | Logout
-        else
-          li
-            = link-to 'sign-in' class="button with-gap" 
-              | Sign in
-          li
-            = link-to 'register' class="button alert with-gap" 
-              | Register
+  .top-bar-right
+    ul.dropdown.menu.show-for-medium data-dropdown-menu="data-dropdown-menu" style=displayIfAuthenticated
+      li 
+        a href="#"
+          session.data.authenticated.name
+        zf-dropdown-menu class="vertical"
+          =top-nav-menu
+    #responsive-menu
+      ul.menu.vertical.hide-for-medium style=displayIfAuthenticated
+        =top-nav-menu
+      ul.menu style=displayUnlessAuthenticated
+        li
+          = link-to 'sign-in' class="button with-gap" 
+            | Sign in
+        li
+          = link-to 'register' class="button alert with-gap" 
+            | Register
