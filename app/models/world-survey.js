@@ -3,8 +3,8 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   world:       DS.belongsTo('world'),
   system:      DS.belongsTo('system'),
-  updater:     DS.attr('boolean'),
-  updaters:    DS.attr("array"),
+  updater:     DS.attr('string'),
+  updaters:    DS.attr('array'),
   carbon:      DS.attr('boolean'),
   iron:        DS.attr('boolean'),
   nickel:      DS.attr('boolean'),

@@ -4,7 +4,8 @@ export default ApplicationRoute.extend({
   model() {
     return this.get("store").query('survey', { per_page: 100,
                                                sort: 'id',
-                                               direction: 'desc'});
+                                               direction: 'desc',
+                                               include: ['world']});
   }
 
 });

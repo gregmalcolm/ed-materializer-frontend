@@ -15,6 +15,7 @@ export default Ember.Route.extend({
                .query('system', { per_page: 20,
                                   q: transition.queryParams.q,
                                   sort: 'system',
-                                  direction: 'asc'});
+                                  direction: 'asc',
+                                  include: ['worlds', 'stars']});
   },
 });

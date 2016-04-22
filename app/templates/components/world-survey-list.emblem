@@ -1,0 +1,6 @@
+if worldSurvey
+  if discoveredMaterialsList
+    ul
+     li
+      | Materials discovered: 
+      = discoveredMaterialsList

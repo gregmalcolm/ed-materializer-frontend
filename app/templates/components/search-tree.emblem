@@ -1,0 +1,20 @@
+if systems
+  ul
+    each systems as |system|
+      li
+        = system.system
+        ul
+          each system.stars as |star|
+            li
+              = system.system
+              '
+              = star.star
+          each system.worlds as |world|
+            li
+              = system.system
+              '
+              = world.world
+              '
+              = world-survey-list worldSurvey=world.world_survey
+else
+  | No Systems found matching that criteria
