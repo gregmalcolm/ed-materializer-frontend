@@ -13,6 +13,9 @@ Router.map(function() {
     this.route('confirm');
   });
   this.route('search');
+  this.route('surveys', function() {
+    this.route('new')
+  });
 });
 
 export default Router;

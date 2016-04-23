@@ -10,14 +10,4 @@ export default Ember.Component.extend({
           $("#responsive-menu").hide();
     });
   },
-
-  displayIfAuthenticated: Ember.computed("session.isAuthenticated", function() {
-    return this.get("session.isAuthenticated") ? "display: block;"
-                                               : "display: none;";
-  }),
-  displayUnlessAuthenticated: Ember.computed("session.isAuthenticated", function() {
-    return this.get("session.isAuthenticated") ? "display: none;"
-                                               : "display: block;";
-
-  }),
 });

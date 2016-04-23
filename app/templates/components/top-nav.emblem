@@ -15,16 +15,18 @@
       li
         = link-to "search" (query-params q=q) class="button" | Search 
   .top-bar-right
-    ul.dropdown.menu.show-for-medium data-dropdown-menu="data-dropdown-menu" style=displayIfAuthenticated
+    ul.dropdown.menu.show-for-medium data-dropdown-menu="data-dropdown-menu" class=session.isAuthenticated:show:hide
       li 
-        a href="#"
+        a.button.dropdown.menubutton href="#"
+          | CMDR
+          '
           session.data.authenticated.name
         zf-dropdown-menu class="vertical"
           =top-nav-menu
     #responsive-menu
-      ul.menu.vertical.hide-for-medium style=displayIfAuthenticated
+      ul.menu.vertical.hide-for-medium class=session.isAuthenticated:show:hide
         =top-nav-menu
-      ul.menu style=displayUnlessAuthenticated
+      ul.menu class=session.isAuthenticated:hide:show
         li
           = link-to 'sign-in' class="button with-gap" 
             | Sign in

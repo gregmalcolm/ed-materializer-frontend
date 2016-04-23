@@ -1,0 +1,5 @@
+tr 
+  td
+    = input type='checkbox' checked=matValue
+    label 
+      = mat.niceName
