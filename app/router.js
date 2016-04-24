@@ -14,7 +14,7 @@ Router.map(function() {
   });
   this.route('search');
   this.route('surveys', function() {
-    this.route('new')
+    this.route('new');
   });
 });
 

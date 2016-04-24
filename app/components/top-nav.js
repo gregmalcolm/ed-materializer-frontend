@@ -6,8 +6,8 @@ export default Ember.Component.extend({
 
   didInsertElement() {
     this._super(...arguments);
-    this.$("#responsive-menu a, button") .on("click", function() {
-          $("#responsive-menu").hide();
+    this.$("#responsive-menu a, button") .on("click", () => {
+      this.$("#responsive-menu").hide();
     });
   },
 });

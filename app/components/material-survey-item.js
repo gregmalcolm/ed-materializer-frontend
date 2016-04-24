@@ -10,11 +10,11 @@ export default Ember.Component.extend({
   }),
 
   onMat: Ember.on('init', function() {
-    let mat = this.get('mat.name')
+    let mat = this.get('mat.name');
     if (mat) {
       let matAttr = `survey.${mat.name}`;
       this.matValue = Ember.computed(matAttr, {
-        get: (key) => {
+        get: (/*key*/) => {
           //console.log(`get ${this.get('mat.name')}`);
           return this.get(`survey.${this.get('mat.name')}`);
         },

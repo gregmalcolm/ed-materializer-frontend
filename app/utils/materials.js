@@ -1,8 +1,6 @@
-import DS from 'ember-data';
 import Material from '../objects/material';
 
-export default {
-  materials: [
+export default [
     Material.create({ code: 'C',  name: 'carbon', rarity: 'Very Common', score: 1 }),
     Material.create({ code: 'Fe', name: 'iron', rarity: 'Very Common', score: 1 }),
     Material.create({ code: 'Ni', name: 'nickel', rarity: 'Very Common', score: 1 }),
@@ -28,6 +26,5 @@ export default {
     Material.create({ code: 'Tc', name: 'technetium', rarity: 'Very Rare', score: 4 }),
     Material.create({ code: 'Te', name: 'tellurium', rarity: 'Very Rare', score: 4 }),
     Material.create({ code: 'Y',  name: 'yttrium', rarity: 'Very Rare', score: 4 }),
-  ],
-};
+];
 

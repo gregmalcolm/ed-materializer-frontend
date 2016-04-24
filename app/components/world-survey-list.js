@@ -6,7 +6,7 @@ export default Ember.Component.extend({
   worldSurvey: null,
   discoveredMaterialsList: Ember.computed('worldSurvey.created_at', function() {
     let discoveries = [];
-    for (var mat of Materials.materials) {
+    for (var mat of Materials) {
       if (this.get(`worldSurvey.${mat.name}`) === true) {
         discoveries.push(StringUtils.titleize(mat.name));
       }

@@ -7,7 +7,7 @@ export default DS.Model.extend({
   resource:    DS.attr('string'),
   notes:       DS.attr('string'),
   surveyed_by: DS.attr('string'),
-  surveyed_at: DS.attr('date'/*,  defaultValue: ''*/),
+  surveyed_at: DS.attr('date',  {defaultValue: moment().utc().format("YYYY-MM-DD")}),
   error_flag:  DS.attr('boolean'),
   error_description: DS.attr('string'),
   image_url:   DS.attr('string'),
