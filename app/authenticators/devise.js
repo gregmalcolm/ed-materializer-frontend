@@ -51,15 +51,21 @@ export default DeviseAuthenticator.extend({
   },
 
   invalidate(headers) {
-    return Ember.$.ajax({
-      url: `${this.authPath}/sign_out`,
-      dataType: 'json',
-      type: 'DELETE',
-      data: {
-        'access-token': headers.accessToken,
-        'client': headers.client,
-        'uid': headers.uid
-      }
+    return new RSVP.Promise((resolve) => {
+      return Ember.$.ajax({
+        url: `${this.authPath}/sign_out`,
+        dataType: 'json',
+        type: 'DELETE',
+        data: {
+          'access-token': headers.accessToken,
+          'client': headers.client,
+          'uid': headers.uid
+        }
+      })
+      .complete(() => {
+        // Don't care if you succeeded or not. Session is over.
+        resolve();
+      });
     });
   }
 });
