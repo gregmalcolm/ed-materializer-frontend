@@ -17,7 +17,7 @@
   .top-bar-right
     ul.dropdown.menu.show-for-medium data-dropdown-menu="data-dropdown-menu" class=session.isAuthenticated:show:hide
       li 
-        a.button.dropdown.menubutton href="#"
+        a.button.dropdown.menubutton
           | CMDR
           '
           session.data.authenticated.name
