@@ -1,6 +1,0 @@
-li
-  link-to 'surveys'
-    | Survey
-li
-  a{action 'invalidateSession'} href="#"
-    | Logout

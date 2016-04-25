@@ -1,5 +1,5 @@
 li
-  link-to 'surveys.new'
+  link-to 'surveys'
     | Survey
 li
   a{action 'invalidateSession'} href="#"

@@ -11,7 +11,7 @@
   .top-bar-left
     ul.menu
       li
-        = input "Eg, Sol, Shinrarta, Ceeckia" class="input-group-field" value=q
+        = input placeholder="e.g., Achenar" class="input-group-field" value=q
       li
         = link-to "search" (query-params q=q) class="button" | Search 
   .top-bar-right
