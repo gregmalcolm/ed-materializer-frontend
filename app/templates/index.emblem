@@ -1,3 +1,4 @@
-/= big-search
+= link-to 'surveys' class='button large success'
+  | Go prospecting!
 
 = survey-tree surveys=model

@@ -1,0 +1,43 @@
+.row
+  .medium-12.columns
+    h5 Which World?
+=system-world-select world=world systemName=systemName worldName=worldName
+
+.row
+  .medium-12.columns
+    if fullSystem
+      if sortedSurveys
+        h5 Current surveys
+        table
+          thead
+            tr
+              th
+              th
+                | Date
+              th
+                | Owner
+              th
+                | Surveyors
+              th
+                | Resource
+          tbody
+            each sortedSurveys as |survey|
+                  tr
+                    td
+                    td
+                      = moment-format survey.surveyed_at
+                    td
+                      = survey.commander
+                    td
+                      = survey.surveyed_by
+                    td
+                      = survey.resource
+      else
+        | No surveys recorded for this world. Yet.
+if session.isAuthenticated
+  .row
+    .medium-12.columns
+      if fullSystem
+        button.button.success.large
+          | Start a New Survey 
+  = outlet
