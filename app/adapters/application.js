@@ -1,13 +1,11 @@
 import DS from 'ember-data';
+import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 import ENV from '../config/environment';
 
-export default DS.JSONAPIAdapter.extend({
+export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
+  authorizer: 'authorizer:devise',
   host: ENV["apiHostName"],
-  namespace: 'api/v3'
-  //headers: Ember.computed('session.authToken', function() {
-    //return {
-      //"API_KEY": this.get("session.authToken"),
-      //"ANOTHER_HEADER": "Some header value"
-    //};
-  //})
+  namespace: 'api/v3',
+  headers: {'Accept': 'application/json',
+            'Content-Type': 'application/json'},
 });

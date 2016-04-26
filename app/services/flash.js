@@ -3,6 +3,39 @@ import Ember from 'ember';
 export default Ember.Service.extend({
   errors: null,
 
+  latestErrors: Ember.computed("errors", function() {
+    let errors = this.get("errors");
+    this.set("errors", null);
+    return errors;
+  }),
+
+  latestNotices: Ember.computed("notices", function() {
+    let notices = this.get("notices");
+    this.set("notices", null);
+    return notices;
+  }),
+
+  failure(xhr) {
+    let errors;
+    if (xhr.responseJSON) {
+      errors = this._jsonErrorsAsText(xhr.responseJSON);
+    } else if (xhr.isAdapterError) {
+      errors = this._jsonErrorsAsText(xhr);
+    } else if (xhr.responseText) {
+      errors = xhr.responseText;
+    } else if (xhr.statusText) {
+      errors = xhr.statusText;
+    } else {
+      errors = xhr;
+    }
+
+    this.set("errors", errors);
+  },
+
+  notice(message) {
+    this.set("notices", message);
+  },
+
   _jsonErrorsAsText(json) {
     if (json.errors) {
       json = json.errors;
@@ -55,35 +88,4 @@ export default Ember.Service.extend({
       return "";
     }
   },
-
-  latestErrors: Ember.computed("errors", function() {
-    let errors = this.get("errors");
-    this.set("errors", null);
-    return errors;
-  }),
-
-  latestNotices: Ember.computed("notices", function() {
-    let notices = this.get("notices");
-    this.set("notices", null);
-    return notices;
-  }),
-
-  failure(xhr) {
-    let errors;
-    if (xhr.responseJSON) {
-      errors = this._jsonErrorsAsText(xhr.responseJSON);
-    } else if (xhr.responseText) {
-      errors = xhr.responseText;
-    } else if (xhr.statusText) {
-      errors = xhr.statusText;
-    } else {
-      errors = xhr;
-    }
-
-    this.set("errors", errors);
-  },
-
-  notice(message) {
-    this.set("notices", message);
-  }
 });

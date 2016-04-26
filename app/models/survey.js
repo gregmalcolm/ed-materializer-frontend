@@ -6,7 +6,7 @@ export default DS.Model.extend({
   basecamp:    DS.belongsTo('basecamp'),
   //system:      DS.belongsTo('system'),
   commander:   DS.attr('string'),
-  resource:    DS.attr('string'),
+  resource:    DS.attr('string', {defaultValue: 'BINARY'}),
   notes:       DS.attr('string'),
   surveyed_by: DS.attr('string'),
   surveyed_at: DS.attr('date',  {defaultValue: moment().utc().format("YYYY-MM-DD")}),

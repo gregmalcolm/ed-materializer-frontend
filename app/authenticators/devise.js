@@ -1,5 +1,5 @@
-import DeviseAuthenticator from 'ember-simple-auth/authenticators/devise';
 import Ember from 'ember';
+import DeviseAuthenticator from 'ember-simple-auth/authenticators/devise';
 import ENV from '../config/environment';
 
 const { RSVP, isEmpty, run } = Ember;
