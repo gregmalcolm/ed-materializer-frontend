@@ -6,6 +6,6 @@ export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
   authorizer: 'authorizer:devise',
   host: ENV["apiHostName"],
   namespace: 'api/v3',
-  headers: {'Accept': 'application/json',
-            'Content-Type': 'application/json'},
+  //headers: {'Accept': 'application/json',
+            //'Content-Type': 'application/json'},
 });
