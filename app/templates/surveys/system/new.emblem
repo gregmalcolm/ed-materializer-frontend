@@ -1,8 +1,8 @@
 .row
   .medium-12.columns
-    h3 Survey of #{model.systemName} #{model.worldName}
+    h3 Survey of #{presentSystemName}
 
-form{action 'submitSurvey' on='submit'}
+form{action 'create' on='submit'}
   .row
     .medium-4.columns
       label Surveyors
@@ -22,3 +22,6 @@ form{action 'submitSurvey' on='submit'}
       =material-survey rarity="Rare" survey=model.survey
     .medium-2.columns.end
       =material-survey rarity="Very Rare" survey=model.survey
+  .row
+    button.button.large.success type='submit'
+      | Create
