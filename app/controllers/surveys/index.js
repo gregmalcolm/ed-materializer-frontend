@@ -21,6 +21,14 @@ export default Ember.Controller.extend({
     }
   }),
 
+  actions: {
+    newSurvey() {
+      this.transitionToRoute('surveys.system.new',
+                             { 'system-name': this.get('systemName'),
+                               'world-name': this.get('worldName') });
+    },
+  },
+
   surveySorting: ['surveyed_at', 'commander', 'surveyed_by', 'basecamp'],
   sortedSurveys: Ember.computed.sort('world.surveys', 'surveySorting'),
 });
