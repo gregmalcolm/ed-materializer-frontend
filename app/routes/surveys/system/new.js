@@ -4,7 +4,7 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   session: Ember.inject.service('session'),
 
-  model(params) {
+  model() {
     return {
       survey: this.store.createRecord('survey', {
         surveyed_by: this.get('session.data.authenticated.name'),

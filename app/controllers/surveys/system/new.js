@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
       });
       if (world.get('isNew')) {
         world.save()
-             .then( world => {
+             .then( (/*world*/) => {
                this._createSurvey();
              })
              .catch(xhr => {
@@ -38,7 +38,7 @@ export default Ember.Controller.extend({
       commander: this.get('session.data.authenticated.name'),
     });
     survey.save()
-          .then(survey => {
+          .then((/*survey*/) => {
             console.log("success!");
           })
           .catch(xhr => {

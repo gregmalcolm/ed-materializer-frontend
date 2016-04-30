@@ -15,18 +15,18 @@ export default Ember.Service.extend({
     return notices;
   }),
 
-  failure(xhr) {
+  failure(errorObj) {
     let errors;
-    if (xhr.responseJSON) {
-      errors = this._jsonErrorsAsText(xhr.responseJSON);
-    } else if (xhr.isAdapterError) {
-      errors = this._jsonErrorsAsText(xhr);
-    } else if (xhr.responseText) {
-      errors = xhr.responseText;
-    } else if (xhr.statusText) {
-      errors = xhr.statusText;
+    if (errorObj.responseJSON) {
+      errors = this._jsonErrorsAsText(errorObj.responseJSON);
+    } else if (errorObj.isAdapterError) {
+      errors = this._adapterErrors(errorObj);
+    } else if (errorObj.responseText) {
+      errors = errorObj.responseText;
+    } else if (errorObj.statusText) {
+      errors = errorObj.statusText;
     } else {
-      errors = xhr;
+      errors = errorObj;
     }
 
     this.set("errors", errors);
@@ -49,6 +49,16 @@ export default Ember.Service.extend({
       }
 
       return this._errorsInArrayAsHtml(json);
+    }
+  },
+
+  _adapterErrors(errorObj) {
+    if (errorObj.errors && errorObj.errors.length > 0) {
+      return errorObj.errors.map( function(error) {
+        return `<p>${error.detail}</p>`;
+      }).join('');
+    } else {
+      return errorObj.message;
     }
   },
 
