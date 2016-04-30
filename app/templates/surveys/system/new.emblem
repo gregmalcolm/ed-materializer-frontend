@@ -9,7 +9,7 @@ form{action 'create' on='submit'}
       = input value=model.survey.surveyed_by type='text' placeholder='Kamzel, Dr.Kaii' 
     .medium-2.columns.end
       label Date
-      = input value=model.survey.surveyed_at type='date'
+      pikaday-input value=model.survey.surveyed_at format='YYYY-MM-DD'
   .row
     .medium-12.columns
       legend Materials found
