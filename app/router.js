@@ -6,7 +6,6 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('protected');
   this.route('sign-in');
   this.route('register');
   this.route('registrations', function() {
@@ -16,6 +15,8 @@ Router.map(function() {
   this.route('surveys', function() {
     this.route('system', {path: '/:system-name/:world-name'}, function() {
       this.route('new');
+      this.route('show', {path: '/:survey-id'});
+      this.route('edit', {path: '/:survey-id/edit'});
     });
   });
 });

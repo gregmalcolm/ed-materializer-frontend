@@ -38,8 +38,9 @@ export default Ember.Controller.extend({
       commander: this.get('session.data.authenticated.name'),
     });
     survey.save()
-          .then((/*survey*/) => {
-            console.log("success!");
+          .then((survey) => {
+            this.get("flash").notice("Survey created");
+            this.transitionToRoute('surveys.system.edit', survey.get("id"))
           })
           .catch(xhr => {
             this.get("flash").failure(xhr);
