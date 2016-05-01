@@ -4,7 +4,7 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   session: Ember.inject.service('session'),
 
-  model() {
+  model(params) {
     return {
       survey: this.store.createRecord('survey', {
         surveyed_by: this.get('session.data.authenticated.name'),
@@ -14,5 +14,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   afterModel(model) {
     model.world = this.modelFor('surveys.system');
+    console.log(`sysname=${model.world.system_name}`)
   },
 });

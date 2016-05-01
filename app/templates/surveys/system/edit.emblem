@@ -1,0 +1,5 @@
+form{action 'save' on='submit'}
+  = survey-form editing=true model=model
+  .row
+    button.button type='submit'
+      | Save

@@ -4,13 +4,6 @@ export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
   flash: Ember.inject.service('flash'),
 
-  presentSystemName: Ember.computed('model.world.system_name',
-                                    'model.world.world', {
-    get() {
-      return `${this.get('model.world.system_name')} ${this.get('model.world.world')}`.toUpperCase();
-    }
-  }),
-
   actions: {
     create() {
       let world = this.get('model.world');

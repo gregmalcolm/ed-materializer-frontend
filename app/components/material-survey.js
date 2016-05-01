@@ -4,6 +4,7 @@ import Materials from '../utils/materials';
 export default Ember.Component.extend({
   survey: null,
   rarity: null,
+  editing: false,
   materials: Ember.computed("", function() {
     return Materials.filter((mat) => {
       let rarity = this.get('rarity');

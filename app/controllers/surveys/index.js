@@ -23,9 +23,8 @@ export default Ember.Controller.extend({
 
   actions: {
     newSurvey() {
-      this.transitionToRoute('surveys.system.new',
-                             { 'system-name': this.get('systemName'),
-                               'world-name': this.get('worldName') });
+      this.transitionToRoute('surveys.system.new', this.get('systemName'),
+                                                   this.get('worldName'))
     },
   },
 

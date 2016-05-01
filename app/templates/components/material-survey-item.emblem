@@ -1,5 +1,5 @@
 tr 
   td
-    = input type='checkbox' checked=matValue
+    = input type='checkbox' checked=matValue disabled=viewing
     label 
       = mat.niceName
