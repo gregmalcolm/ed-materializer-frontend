@@ -1,6 +1,38 @@
 li
   link-to 'surveys'
-    | Survey
+    | Start Surveying
 li
-  a{action 'invalidateSession'} href="#"
-    | Logout
+  a
+    | Contibuting
+  ul.nested.vertical.menu
+    li
+      a href="http://api.edmaterializer.com"
+        | API
+    li
+      a href="https://github.com/gregmalcolm/ed-materializer-frontend/issues"
+        | Bugs
+    li
+      a href="https://github.com/gregmalcolm/ed-materializer-frontend" 
+        | Github
+    li
+      a href="https://discord.gg/0wESJJF3brdY0NVK"
+        | Discord
+    li
+      a href="https://forums.frontier.co.uk/showthread.php?t=242152" 
+        | Forum
+li 
+  a
+    | Related
+  ul.nested.vertical.menu
+    li
+      a href="https://www.elitedangerous.com/" 
+        | Elite Dangerous
+      a href="https://forums.frontier.co.uk/showthread.php?t=138155" 
+        | EDDiscovery
+      a href="http://www.edsm.net/" 
+        | EDSM
+      a href="https://forums.frontier.co.uk/showthread.php?t=228645"
+        | Prospecting Central
+li
+  a{action 'invalidatesession'}
+    | Sign Out
