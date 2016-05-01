@@ -11,9 +11,10 @@ if systems
               = star.star
           each system.worlds as |world|
             li
-              = system.system
-              '
-              = world.world
+              = link-to 'surveys' (query-params systemName=system.system worldName=world.world)
+                = system.system
+                '
+                = world.world
               '
               = world-survey-list worldSurvey=world.world_survey
 else
