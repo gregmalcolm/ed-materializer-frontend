@@ -24,7 +24,14 @@
           tbody
             each sortedSurveys as |survey|
                   tr
-                    td
+                    td.tight
+                      if survey.commander
+                        if survey.isOwner
+                          button.button.small.success{action 'edit' survey.id}
+                            | Edit
+                        else
+                          button.button.small.secondary{action 'show' survey.id}
+                            | View
                     td
                       = moment-format survey.surveyed_at
                     td

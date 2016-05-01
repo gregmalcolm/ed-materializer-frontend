@@ -1,7 +1,9 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 import moment from 'moment';
 
 export default DS.Model.extend({
+  session: Ember.inject.service('session'),
   world:       DS.belongsTo('world'),
   basecamp:    DS.belongsTo('basecamp'),
   //system:      DS.belongsTo('system'),
@@ -40,5 +42,12 @@ export default DS.Model.extend({
   yttrium:     DS.attr('number'),
   created_at:  DS.attr('date'),
   updated_at:  DS.attr('date'),
-  creator:     DS.attr('string')
+  creator:     DS.attr('string'),
+  isOwner:     Ember.computed('commander', {
+    get() {
+      return (this.get('session.data.authenticated.role') === 'admin' ||
+          this.get('commander') ===
+            this.get('session.data.authenticated.name'));
+    }
+  }),
 });
