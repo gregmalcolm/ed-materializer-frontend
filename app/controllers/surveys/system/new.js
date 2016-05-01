@@ -32,8 +32,17 @@ export default Ember.Controller.extend({
     });
     survey.save()
           .then((survey) => {
-            this.get("flash").notice("Survey created");
-            this.transitionToRoute('surveys.system.edit', survey.get("id"))
+            this.transitionToRoute('surveys.system.edit',
+                                   survey.get("id"))
+                .then((transition) => {
+                  Ember.run.scheduleOnce('afterRender',
+                                     transition.get("controller"),
+                                     function() {
+                                       Ember.run.later(()=> {
+                                         this.get("flash").notice("Survey created");
+                                       }, 100);
+                                     });
+                });
           })
           .catch(xhr => {
             this.get("flash").failure(xhr);

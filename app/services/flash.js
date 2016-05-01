@@ -2,17 +2,14 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
   errors: null,
+  notices: null,
 
   latestErrors: Ember.computed("errors", function() {
-    let errors = this.get("errors");
-    this.set("errors", null);
-    return errors;
+    return this._latestMessage("errors");
   }),
 
   latestNotices: Ember.computed("notices", function() {
-    let notices = this.get("notices");
-    this.set("notices", null);
-    return notices;
+    return this._latestMessage("notices");
   }),
 
   failure(errorObj) {
@@ -29,11 +26,11 @@ export default Ember.Service.extend({
       errors = errorObj;
     }
 
-    this.set("errors", errors);
+    this._setMessage('errors', errors);
   },
 
   notice(message) {
-    this.set("notices", message);
+    this._setMessage('notices', message);
   },
 
   _jsonErrorsAsText(json) {
@@ -97,5 +94,19 @@ export default Ember.Service.extend({
     } else {
       return "";
     }
+  },
+
+  _setMessage(messageName, message) {
+    this.set(messageName, message);
+  },
+
+  _clearMessage(messageName) {
+    this.set(messageName, null);
+  },
+
+  _latestMessage(messageName) {
+    let message = this.get(messageName);
+    this._clearMessage(messageName);
+    return message;
   },
 });
