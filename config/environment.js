@@ -30,6 +30,15 @@ module.exports = function(environment) {
     ENV.hostName = 'http://localhost:4200';
     ENV.apiHostName = 'http://localhost:3000';
   }
+  if (environment === 'qa') {
+    //ENV.APP.LOG_RESOLVER = true;
+    // ENV.APP.LOG_ACTIVE_GENERATION = true;
+    ENV.APP.LOG_TRANSITIONS = true;
+    //ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.hostName = 'http://localhost:4200';
+    ENV.apiHostName = 'http://ed-materializer.herokuapp.com';
+  }
 
   if (environment === 'test') {
     // Testem prefers this...

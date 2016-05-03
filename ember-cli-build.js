@@ -9,7 +9,12 @@ module.exports = function(defaults) {
     },
     sassOptions: {
         extension: 'sass'
-    }
+    },
+    babel: {
+      // disable comments
+      //comments: false,
+      includePolyfill: true
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
