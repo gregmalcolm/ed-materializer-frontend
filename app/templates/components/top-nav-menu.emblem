@@ -34,5 +34,5 @@ li
       a href="https://forums.frontier.co.uk/showthread.php?t=228645"
         | Prospecting Central
 li
-  a{action 'invalidatesession'}
+  a{action 'invalidateSession'}
     | Sign Out

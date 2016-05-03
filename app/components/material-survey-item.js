@@ -17,12 +17,10 @@ export default Ember.Component.extend({
     if (mat) {
       let matAttr = `survey.${mat.name}`;
       this.matValue = Ember.computed(matAttr, {
-        get: (/*key*/) => {
-          //console.log(`get ${this.get('mat.name')}`);
+        get: () => {
           return this.get(`survey.${this.get('mat.name')}`);
         },
         set: (key, value) => {
-          //console.log(`set ${this.get('mat.name')}`);
           this.set(`survey.${this.get('mat.name')}`, value);
           return value;
         }

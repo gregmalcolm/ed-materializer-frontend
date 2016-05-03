@@ -43,7 +43,7 @@ export default DS.Model.extend({
   created_at:  DS.attr('date'),
   updated_at:  DS.attr('date'),
   creator:     DS.attr('string'),
-  isOwner:     Ember.computed('commander', {
+  isOwner:     Ember.computed('commander', 'session.isAuthenticated', {
     get() {
       return (this.get('session.data.authenticated.role') === 'admin' ||
           this.get('commander') ===
