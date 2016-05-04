@@ -22,6 +22,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.envText = 'DEV';
     //ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     ENV.APP.LOG_TRANSITIONS = true;
@@ -31,6 +32,7 @@ module.exports = function(environment) {
     ENV.apiHostName = 'http://localhost:3000';
   }
   if (environment === 'qa') {
+    ENV.envText = 'QA';
     //ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     ENV.APP.LOG_TRANSITIONS = true;

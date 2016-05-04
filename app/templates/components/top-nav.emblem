@@ -6,6 +6,10 @@
       = link-to 'index' 
         span.title-main Materializer
         '
+        if envText
+          span.title-flavor 
+            = envText
+          '
         span.title-suffix ALPHA
         .title-ed Ed
   .top-bar-left
