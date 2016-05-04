@@ -28,7 +28,17 @@ machine. Connect to our QA server instead:
 
 * `ember s --environment=qa --proxy=http://ed-materializer.herokuapp.com/`
 
-** Contributing
+
+## Testing
+
+Want to try stuff out without having to worry about breaking the live data? Do it here:
+
+http://qa.edmaterializer.com
+
+Note: I’m using a ‘free’ heroku account for this one, which has a 10k data row limit, so I’m purposefully not staying up to date with
+the monster.
+
+## Contributing
 
 Contributions to the project are welcome, though Issues and Pull Request.
 

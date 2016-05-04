@@ -3,6 +3,9 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
+  var env = EmberApp.env();
+  var isProductionLikeBuild = ['production', 'qaproduction', 'staging'].indexOf(env) > -1;
+
   var app = new EmberApp(defaults, {
     'ember-cli-foundation-6-sass': {
       'foundationJs': 'all'
@@ -15,6 +18,12 @@ module.exports = function(defaults) {
       //comments: false,
       includePolyfill: true
     },
+
+    sourcemaps: {
+      enabled: !isProductionLikeBuild,
+    },
+    minifyCSS: { enabled: isProductionLikeBuild },
+    minifyJS: { enabled: isProductionLikeBuild },
   });
 
   // Use `app.import` to add additional libraries to the generated

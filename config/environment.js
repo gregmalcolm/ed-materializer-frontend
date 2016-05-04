@@ -42,6 +42,11 @@ module.exports = function(environment) {
     ENV.apiHostName = 'http://ed-materializer.herokuapp.com';
   }
 
+  if (environment === 'qaproduction') {
+    ENV.envText = 'QA';
+    ENV.apiHostName = 'http://ed-materializer.herokuapp.com';
+  }
+
   if (environment === 'test') {
     // Testem prefers this...
     ENV.baseURL = '/';

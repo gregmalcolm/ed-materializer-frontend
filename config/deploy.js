@@ -16,9 +16,8 @@ module.exports = function(deployTarget) {
     // configure other plugins for staging deploy target here
   }
 
-  if (deployTarget === 'qa') {
-    ENV.build.environment = 'qa';
-    ENV.envText = 'QA';
+  if (deployTarget === 'qaproduction') {
+    ENV.build.environment = 'qaproduction';
     // configure other plugins for production deploy target here
     ENV.s3 = {
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -26,7 +25,8 @@ module.exports = function(deployTarget) {
       bucket: 'qa.edmaterializer.com',
       region: 'us-east-1',
       filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,html}'
-  },
+    };
+  }
 
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
