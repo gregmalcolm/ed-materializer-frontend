@@ -12,7 +12,7 @@ Router.map(function() {
     this.route('confirm');
   });
   this.route('search');
-  this.route('surveys', function() {
+  this.route('worlds', function() {
     this.route('system', {path: '/:system-name/:world-name'}, function() {
       this.route('new');
       this.route('show', {path: '/:survey-id'});

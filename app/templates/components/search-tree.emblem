@@ -11,7 +11,7 @@ if systems
               = star.star
           each system.worlds as |world|
             li
-              = link-to 'surveys' (query-params systemName=system.system worldName=world.world)
+              = link-to 'worlds' (query-params systemName=system.system worldName=world.world)
                 = system.system
                 '
                 = world.world

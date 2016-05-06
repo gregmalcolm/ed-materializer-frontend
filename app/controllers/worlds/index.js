@@ -23,18 +23,18 @@ export default Ember.Controller.extend({
 
   actions: {
     newSurvey() {
-      this.transitionToRoute('surveys.system.new', this.get('systemName'),
-                                                   this.get('worldName'));
+      this.transitionToRoute('worlds.system.new', this.get('systemName'),
+                                                  this.get('worldName'));
     },
     edit(surveyId) {
-      this.transitionToRoute('surveys.system.edit', this.get('systemName'),
-                                                    this.get('worldName'),
-                                                    surveyId);
+      this.transitionToRoute('worlds.system.edit', this.get('systemName'),
+                                                   this.get('worldName'),
+                                                   surveyId);
     },
     show(surveyId) {
-      this.transitionToRoute('surveys.system.show', this.get('systemName'),
-                                                    this.get('worldName'),
-                                                    surveyId);
+      this.transitionToRoute('worlds.system.show', this.get('systemName'),
+                                                   this.get('worldName'),
+                                                   surveyId);
     },
   },
 

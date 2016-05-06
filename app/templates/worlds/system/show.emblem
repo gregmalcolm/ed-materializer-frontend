@@ -1,0 +1,9 @@
+= survey-form editing=false model=model
+.row
+  if survey.isOwner
+    .medium-1.columns.end
+      link-to 'worlds.system.edit' model.survey.id class='button success'
+        | Edit
+  .medium-1.columns.end
+    link-to 'worlds' (query-params systemName=model.world.system_name worldName=model.world.world) class="button secondary"
+      | Back

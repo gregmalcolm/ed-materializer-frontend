@@ -8,6 +8,6 @@ export default Ember.Route.extend({
   },
 
   afterModel(model) {
-    model.world = this.modelFor('surveys.system');
+    model.world = this.modelFor('worlds.system');
   },
 });

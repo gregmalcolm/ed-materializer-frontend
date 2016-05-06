@@ -13,6 +13,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
 
   afterModel(model) {
-    model.world = this.modelFor('surveys.system');
+    model.world = this.modelFor('worlds.system');
   },
 });

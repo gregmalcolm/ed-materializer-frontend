@@ -12,7 +12,7 @@ table
     tbody
       tr
         td
-          = link-to 'surveys' (query-params systemName=survey.world.system_name worldName=survey.world.world)
+          = link-to 'worlds' (query-params systemName=survey.world.system_name worldName=survey.world.world)
             survey.world.system_name
             '
             survey.world.world

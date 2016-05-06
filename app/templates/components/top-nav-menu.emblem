@@ -1,5 +1,5 @@
 li
-  link-to 'surveys'
+  link-to 'worlds'
     | Start Surveying
 li
   a
@@ -31,6 +31,8 @@ li
         | EDDiscovery
       a href="http://www.edsm.net/" 
         | EDSM
+      a href="http://www.elitegalaxyonline.com/"
+        | Elite Galaxy Online
       a href="https://forums.frontier.co.uk/showthread.php?t=228645"
         | Prospecting Central
 li
