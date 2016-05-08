@@ -27,4 +27,10 @@ export default Ember.Component.extend({
       });
     }
   }),
+
+  isNumeric: Ember.computed('survey.resource', {
+    get() {
+      return this.get('survey.resource') !== 'BINARY';
+    },
+  }),
 });
