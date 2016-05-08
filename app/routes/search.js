@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     let model = Ember.Object.create({
       isLoaded: false,
     });
-    model.systems = this._findSystems(params, transition, model)
+    model.systems = this._findSystems(params, transition, model);
     return model;
   },
   queryParams: {
