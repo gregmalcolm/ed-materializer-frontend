@@ -13,6 +13,8 @@ Router.map(function() {
   });
   this.route('search');
   this.route('worlds', function() {
+    this.route('surveys', {path: '/:world-id'}, function() {
+    });
     this.route('system', {path: '/:system-name/:world-name'}, function() {
       this.route('new');
       this.route('show', {path: '/:survey-id'});

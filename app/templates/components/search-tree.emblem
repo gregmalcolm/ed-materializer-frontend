@@ -18,4 +18,7 @@ if systems
               '
               = world-survey-list worldSurvey=world.world_survey
 else
-  | No Systems found matching that criteria
+  if isLoaded
+    | No Systems found matching that criteria
+  else
+    | Searching...
