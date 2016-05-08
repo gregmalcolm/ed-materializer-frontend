@@ -2,23 +2,21 @@
 
 module.exports = function(deployTarget) {
   var ENV = {
-    build: {}
+    build: {
+      environment: deployTarget,
+    },
     // include other plugin configuration that applies to all deploy targets here
+    'revision-data': {
+      type: 'git-commit'
+    }
   };
-
-  if (deployTarget === 'development') {
-    ENV.build.environment = 'development';
-    // configure other plugins for development deploy target here
-  }
 
   if (deployTarget === 'staging') {
     ENV.build.environment = 'production';
-    // configure other plugins for staging deploy target here
   }
 
   if (deployTarget === 'qaproduction') {
     ENV.build.environment = 'qaproduction';
-    // configure other plugins for production deploy target here
     ENV.s3 = {
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
       secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
@@ -29,8 +27,6 @@ module.exports = function(deployTarget) {
   }
 
   if (deployTarget === 'production') {
-    ENV.build.environment = 'production';
-    // configure other plugins for production deploy target here
     ENV.s3 = {
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
       secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
