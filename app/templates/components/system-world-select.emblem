@@ -1,7 +1,35 @@
-.row
+.row.autocompletable
   .medium-3.columns
     label System
     = input value=systemName type='text' placeholder='Ceeckia ZQ-L c24-0' 
   .medium-2.columns.end
     label World
     = input value=worldName type='text' placeholder='2'
+if hasSystemText
+  if selectingWorld
+    .row
+      .medium-5.columns
+        table.hover
+          tbody
+            each worlds as |world|
+              tr.cursor-pointer
+               td{action "selectWorld" world}
+                 world.system_name
+                 '
+                 world.world
+  if fullSystem 
+    .row
+      .medium-12.columns.postSelection
+        fullSystem
+        '
+        if knownWorld
+          | has been surveyed before
+        else
+          | is not in our records yet
+      .medium-12.columns.postSelection
+        if knownWorld
+          button.button{action 'editWorld'}
+            | Next: World Details
+        else
+          button.button.success{action 'newWorld'}
+            | Next: Create World Details

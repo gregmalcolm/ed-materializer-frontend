@@ -1,4 +1,4 @@
-= link-to 'worlds' class='button large success'
+= link-to 'worlds' (query-params systemName='' worldName='') class='button large success'
   | Go prospecting!
 
 = latest-surveys surveys=model
