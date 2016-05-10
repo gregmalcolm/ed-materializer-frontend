@@ -1,5 +1,5 @@
 li
-  link-to 'worlds' (query-params systemName='' worldName='')
+  link-to 'surveying' (query-params systemName='' worldName='')
     | Start Surveying
 li
   a

@@ -16,16 +16,16 @@ export default Ember.Controller.extend({
     editWorld() {
     },
     //newSurvey() {
-      //this.transitionToRoute('worlds.system.new', this.get('systemName'),
+      //this.transitionToRoute('surveying.system.new', this.get('systemName'),
                                                   //this.get('worldName'));
     //},
     //edit(surveyId) {
-      //this.transitionToRoute('worlds.system.edit', this.get('systemName'),
+      //this.transitionToRoute('surveying.system.edit', this.get('systemName'),
                                                    //this.get('worldName'),
                                                    //surveyId);
     //},
     //show(surveyId) {
-      //this.transitionToRoute('worlds.system.show', this.get('systemName'),
+      //this.transitionToRoute('surveying.system.show', this.get('systemName'),
                                                    //this.get('worldName'),
                                                    //surveyId);
     //},

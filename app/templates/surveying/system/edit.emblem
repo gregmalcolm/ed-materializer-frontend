@@ -5,5 +5,5 @@ form{action 'save' on='submit'}
       button.button type='submit'
         | Save
     .medium-1.columns.end
-      link-to 'worlds.system.show' model.survey.id class='button secondary'
+      link-to 'surveying.system.show' model.survey.id class='button secondary'
         | Done

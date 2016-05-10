@@ -32,7 +32,7 @@ export default Ember.Controller.extend({
     });
     survey.save()
           .then((survey) => {
-            this.transitionToRoute('worlds.system.edit',
+            this.transitionToRoute('surveying.system.edit',
                                    survey.get("id"))
                 .then((transition) => {
                   Ember.run.scheduleOnce('afterRender',
