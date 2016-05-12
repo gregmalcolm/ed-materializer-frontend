@@ -1,0 +1,8 @@
+= world-form world=model systemName=systemName worldName=worldName isEditing=true
+.row
+  .medium-1.columns.button-bar
+    button.button.success type="submit" 
+      | Create
+  .medium-1.columns.end
+    = link-to 'surveying' class="button secondary"
+      | Cancel

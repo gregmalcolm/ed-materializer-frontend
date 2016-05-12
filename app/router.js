@@ -16,12 +16,11 @@ Router.map(function() {
     this.route('worlds', function() {
       this.route('new');
       this.route('edit', {path: '/:world-id/edit'});
-      this.route('show', {path: '/:world-id'}, function() {
-        this.route('surveys', function() {
-          this.route('new');
-          this.route('edit', {path: '/:survey-id/edit'});
-          this.route('show', {path: '/:survey-id'});
-        });
+      this.route('show', {path: '/:world-id'});
+      this.route('surveys', {path:'/:world-id/surveys'}, function() {
+        this.route('new');
+        this.route('edit', {path: '/:survey-id/edit'});
+        this.route('show', {path: '/:survey-id'});
       });
     });
     this.route('system', {path: '/:system-name/:world-name'}, function() {

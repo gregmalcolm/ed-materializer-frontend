@@ -15,4 +15,5 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   afterModel(model) {
     model.world = this.modelFor('surveying.system');
   },
+
 });

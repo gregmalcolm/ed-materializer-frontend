@@ -1,0 +1,25 @@
+.row
+  .medium-12.columns
+    h3 Surveying: World Details
+form{action 'create' on='submit'}
+  .row
+    .medium-3.columns
+      label System
+      = input value=systemName type='text' placeholder='Ceeckia ZQ-L c24-0' 
+    .medium-2.columns.end
+      label World
+      = input value=worldName type='text' placeholder='2'
+  .row
+    .medium-12.columns
+      legend System Coordinates
+  .row
+    .medium-2.columns
+      label X
+      = input value=world.system.x text='text' placeholder=-1111.5625 
+    .medium-2.columns
+      label Y
+      = input value=world.system.y text='text' placeholder=-134.21875 
+    .medium-2.columns.end
+      label Z
+      = input value=world.system.z text='text' placeholder=65269.75
+

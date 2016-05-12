@@ -10,11 +10,6 @@ export default Ember.Controller.extend({
 
 
   actions: {
-    newWorld() {
-
-    },
-    editWorld() {
-    },
     //newSurvey() {
       //this.transitionToRoute('surveying.system.new', this.get('systemName'),
                                                   //this.get('worldName'));

@@ -28,8 +28,8 @@ if hasSystemText
           | is not in our records yet
       .medium-12.columns.postSelection
         if knownWorld
-          button.button{action 'editWorld'}
-            | Next: World Details
+          = link-to 'surveying.worlds.show' firstWorld.id class="button success"
+            | World Details &gt;&gt;
         else
-          button.button.success{action 'newWorld'}
-            | Next: Create World Details
+          = link-to 'surveying.worlds.new' (query-params systemName=systemName worldName=worldName) class="button success"
+            | Create World Details &gt;&gt;
