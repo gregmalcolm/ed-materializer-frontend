@@ -32,4 +32,14 @@ export default Ember.Component.extend({
       'Water Giant': {name: 'Water Giant'},
     },
   },
+  volcanismTypes: {
+    'No Volcanism': {name: 'No Volcanism'},
+    'Ammonia Magma': {name: 'Ammonia Magma'},
+    'Iron Magma': {name: 'Iron Magma'},
+    'Silicate Magma': {name: 'Silicate Magma'},
+    'Water Magma': {name: 'Water Magma'},
+    'Carbon Dioxide Geysers': {name: 'Carbon Dioxide Geysers'},
+    'Silicate Vapour Geysers': {name: 'Silicate Vapour Geysers'},
+    'Water Geysers': {name: 'Water Geysers'},
+  },
 });

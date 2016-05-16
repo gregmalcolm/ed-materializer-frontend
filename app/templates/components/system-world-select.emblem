@@ -1,5 +1,5 @@
 .row.autocompletable
-  .medium-3.columns
+  .medium-4.columns
     label System
     = input value=systemName type='text' placeholder='Ceeckia ZQ-L c24-0' 
   .medium-2.columns.end

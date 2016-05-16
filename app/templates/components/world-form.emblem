@@ -3,7 +3,7 @@
     h3 Surveying: World Details
 form{action 'create' on='submit'}
   .row
-    .medium-3.columns
+    .medium-4.columns
       label System
       = input value=systemName type='text' placeholder='Ceeckia ZQ-L c24-0' 
     .medium-2.columns.end
@@ -15,155 +15,98 @@ form{action 'create' on='submit'}
   .row
     .medium-2.columns
       label X
-      = input value=world.system.x text='text' placeholder=-1111.5625 
+      = input value=world.system.x text='number' placeholder=-1111.5625 
     .medium-2.columns
       label Y
-      = input value=world.system.y text='text' placeholder=-134.21875 
+      = input value=world.system.y text='number' placeholder=-134.21875 
     .medium-2.columns.end
       label Z
-      = input value=world.system.z text='text' placeholder=65269.75
+      = input value=world.system.z text='number' placeholder=65269.75
   .row
-    .medium-3.columns.end
+    .medium-4.columns
       label
         | World Type
-        select
+        select value=world.world-type
           option value=null 
-            | What kind of world?
+            | ?
           = each-in worldTypes as |group groupedWorlds|
             optgroup label=group
             = each-in groupedWorlds as |key item|
-              option value=key disabled=item.disabled
+              option value=key disabled=item.disabled selected={eq key world.world_type}
                 item.name
-
-      /<label>Select Menu
-        /<select>
-          /<option value="husker">Husker</option>
-          /<option value="starbuck">Starbuck</option>
-          /<option value="hotdog">Hot Dog</option>
-          /<option value="apollo">Apollo</option>
-        /</select>
-      /</label>
-  .row
-    .medium-12.columns
-  /.row
-    /.medium-12.columns
-      /label Atmosphere
-      /| 52.2% Sulphur Dioxide
-      /| 57.8% Carbon Dioxide
-      label Earth Masses
-      | 
-    .medium-12.columns
-      label Radius
-      | 8,901KM
-    .medium-12.columns
-      label Gravity
-      | 1.07G
-    .medium-12.columns
-      label Surface Temp
-      | 1,265K
-    .medium-12.columns
-      label Volcanism
-      | Iron Magma
-  .row
-    .medium-12.columns
-      label Comoposition
-      | 0.8% Ice
-      | 66.6% Rock
-      | 32.9% Metal
-  .row
-    .medium-12.columns
-      label Reserves
-      | Common
-  .row
-    .medium-12.columns
+    .medium-3.columns.end
       label Arrival Point
-      | 1,323.53Ls
+      .row
+        .medium-8.columns
+          = input value=world.arrival_point type="number" placeholder="1323.53"
+        .medium-4.columns.suffix
+          | Ls
+  .row
+    .medium-3.columns
+      label Earth Masses
+      .row
+        .medium-10.columns
+          = input value=world.mass type="number" step="0.1" placeholder="0.343"
+        .medium-2.columns.suffix
+          | Earths
+    .medium-3.columns.end
+      label Radius
+      .row
+        .medium-10.columns
+          = input value=world.radius type="number" placeholder="5233"
+        .medium-2.columns.suffix
+          | km
+  .row
+    .medium-3.columns
+      label Gravity
+      .row
+        .medium-10.columns
+          = input value=world.gravity type="number" step="0.1" placeholder="0.56"
+        .medium-2.columns.suffix
+          | G
+    .medium-3.columns.end
+      label Surface Temperature
+      .row
+        .medium-10.columns
+          = input value=world.surface_temp type="number" placeholder="323"
+        .medium-2.columns.suffix
+          | K
+  .row
+    .medium-4.columns.end
+      label
+        | Volcanism
+        select value=world.world-type
+          option value=null 
+            | ?
+          = each-in volcanismTypes as |key item|
+            option value=key disabled=item.disabled selected={eq key world.volcanism}
+              item.name
   .row
     .medium-12.columns
-      label Notes
-      | blah blah blah
-  /.row
-    /.medium-12.columns
-      /label Type
-      /| High Metal World
-    /.medium-12.columns
-      /label Earth Masses
-      /| 
-    /.medium-12.columns
-      /label Radius
-      /| 8,901KM
-    /.medium-12.columns
-      /label Gravity
-      /| 1.07G
-    /.medium-12.columns
-      /label Surface Temp
-      /| 1,265K
-    //.medium-12.columns
-      //label Surface Pressure
-      //| 18.25 Atmospheres
-    /.medium-12.columns
-      /label Volcanism
-      /| Iron Magma
-  //.row
-    //.medium-12.columns
-      //label Atmosphere
-      //| 52.2% Sulphur Dioxide
-      //| 57.8% Carbon Dioxide
-  /.row
-    /.medium-12.columns
-      /label Comoposition
-      /| 0.8% Ice
-      /| 66.6% Rock
-      /| 32.9% Metal
-  /.row
-    /.medium-12.columns
-      /label Reserves
-      /| Common
-  /.row
-    /.medium-12.columns
-      /label Arrival Point
-      /| 1,323.53Ls
-  /.row
-    /.medium-12.columns
-      /label Notes
-      /| blah blah blah
-
-
-
-      /<label>Select Menu
-        /<select>
-          /<option value="husker">Husker</option>
-          /<option value="starbuck">Starbuck</option>
-          /<option value="hotdog">Hot Dog</option>
-          /<option value="apollo">Apollo</option>
-        /</select>
-      /</label>
-      /Metal Rich
-      /High Metal Content
-      /Rocky World
-      /Icy World
-      /Rocky Ice World
-
-      /Metallic Meteorite
-      /Mesosiderite
-      /Bronzite Chondrite
-      /Outcrop 1
-      /Outcrop 2
-      /AGGREGATED
-      /BINARY
-
-      /No Volcanism
-      /Ammonia Magma
-      /Iron Magma
-      /Silicate Magma
-      /Water Magma
-      /Carbon Dioxide Geysers
-      /Silicate Vapour Geysers
-      /Water Geysers
-
-      /Pristine
-      /Major
-      /Common
-      /Low
-      /Depleted
-      /N/A
+      legend Comoposition
+  .row
+    .medium-2.columns
+      label Rock
+      .row
+        .medium-11.columns
+          = input value=world.rock_pct text='number' placeholder="66.2"
+        .medium-1.columns.suffix
+          | %
+    .medium-2.columns
+      label Metal
+      .row
+        .medium-11.columns
+          = input value=world.metal_pct text='number' placeholder="23.3"
+        .medium-1.columns.suffix
+          | %
+    .medium-2.columns.end
+      label Ice
+      .row
+        .medium-11.columns
+          = input value=world.ice_pct text='number' placeholder="10.5"
+        .medium-1.columns.suffix
+          | %
+  .row
+    .medium-6.columns
+      label Shared Notes
+      = textarea value=world.notes cols="80" rows="6"
