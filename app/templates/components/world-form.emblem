@@ -22,4 +22,148 @@ form{action 'create' on='submit'}
     .medium-2.columns.end
       label Z
       = input value=world.system.z text='text' placeholder=65269.75
+  .row
+    .medium-3.columns.end
+      label
+        | World Type
+        select
+          option value=null 
+            | What kind of world?
+          = each-in worldTypes as |group groupedWorlds|
+            optgroup label=group
+            = each-in groupedWorlds as |key item|
+              option value=key disabled=item.disabled
+                item.name
 
+      /<label>Select Menu
+        /<select>
+          /<option value="husker">Husker</option>
+          /<option value="starbuck">Starbuck</option>
+          /<option value="hotdog">Hot Dog</option>
+          /<option value="apollo">Apollo</option>
+        /</select>
+      /</label>
+  .row
+    .medium-12.columns
+  /.row
+    /.medium-12.columns
+      /label Atmosphere
+      /| 52.2% Sulphur Dioxide
+      /| 57.8% Carbon Dioxide
+      label Earth Masses
+      | 
+    .medium-12.columns
+      label Radius
+      | 8,901KM
+    .medium-12.columns
+      label Gravity
+      | 1.07G
+    .medium-12.columns
+      label Surface Temp
+      | 1,265K
+    .medium-12.columns
+      label Volcanism
+      | Iron Magma
+  .row
+    .medium-12.columns
+      label Comoposition
+      | 0.8% Ice
+      | 66.6% Rock
+      | 32.9% Metal
+  .row
+    .medium-12.columns
+      label Reserves
+      | Common
+  .row
+    .medium-12.columns
+      label Arrival Point
+      | 1,323.53Ls
+  .row
+    .medium-12.columns
+      label Notes
+      | blah blah blah
+  /.row
+    /.medium-12.columns
+      /label Type
+      /| High Metal World
+    /.medium-12.columns
+      /label Earth Masses
+      /| 
+    /.medium-12.columns
+      /label Radius
+      /| 8,901KM
+    /.medium-12.columns
+      /label Gravity
+      /| 1.07G
+    /.medium-12.columns
+      /label Surface Temp
+      /| 1,265K
+    //.medium-12.columns
+      //label Surface Pressure
+      //| 18.25 Atmospheres
+    /.medium-12.columns
+      /label Volcanism
+      /| Iron Magma
+  //.row
+    //.medium-12.columns
+      //label Atmosphere
+      //| 52.2% Sulphur Dioxide
+      //| 57.8% Carbon Dioxide
+  /.row
+    /.medium-12.columns
+      /label Comoposition
+      /| 0.8% Ice
+      /| 66.6% Rock
+      /| 32.9% Metal
+  /.row
+    /.medium-12.columns
+      /label Reserves
+      /| Common
+  /.row
+    /.medium-12.columns
+      /label Arrival Point
+      /| 1,323.53Ls
+  /.row
+    /.medium-12.columns
+      /label Notes
+      /| blah blah blah
+
+
+
+      /<label>Select Menu
+        /<select>
+          /<option value="husker">Husker</option>
+          /<option value="starbuck">Starbuck</option>
+          /<option value="hotdog">Hot Dog</option>
+          /<option value="apollo">Apollo</option>
+        /</select>
+      /</label>
+      /Metal Rich
+      /High Metal Content
+      /Rocky World
+      /Icy World
+      /Rocky Ice World
+
+      /Metallic Meteorite
+      /Mesosiderite
+      /Bronzite Chondrite
+      /Outcrop 1
+      /Outcrop 2
+      /AGGREGATED
+      /BINARY
+
+      /No Volcanism
+      /Ammonia Magma
+      /Iron Magma
+      /Silicate Magma
+      /Water Magma
+      /Carbon Dioxide Geysers
+      /Silicate Vapour Geysers
+      /Water Geysers
+
+      /Pristine
+      /Major
+      /Common
+      /Low
+      /Depleted
+      /N/A

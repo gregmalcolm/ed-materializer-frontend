@@ -1,5 +1,13 @@
 import Material from '../objects/material';
 
+// From 2.1 onwards:
+//Grade 1 = Fe, Ni, P, S, C
+//Grade 2 = Ge, V, Cr, Mn, Zn
+//Grade 3 = As, Nb, Se, W, Zr
+//Grade 4 = Cd, Hg, Mo, Sn, Y
+//Grade 5 = Sb, Po, Tc, Ru, Te
+//https://cdn.discordapp.com/attachments/136695602795773952/181816491593695233/unknown.png
+
 export default [
     Material.create({ code: 'C',  name: 'carbon', rarity: 'Very Common', score: 1 }),
     Material.create({ code: 'Fe', name: 'iron', rarity: 'Very Common', score: 1 }),
