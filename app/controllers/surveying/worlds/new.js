@@ -1,21 +1,13 @@
-import Ember from 'ember';
+import BaseWorldController from './base';
 
-export default Ember.Controller.extend({
-  session: Ember.inject.service('session'),
-
+export default BaseWorldController.extend({
   actions: {
     create() {
-      let world = this.get('model');
-      world.setProperties({
-        updater: this.get('session.data.authenticated.name'),
+      this.get('model').setProperties({
+        system_name: this.get('systemName'),
+        world: this.get('worldName'),
       });
-      world.save()
-           .then(world => {
-             this.transitionToRoute('model.world.show', world.id);
-           })
-           .catch(xhr => {
-             this.get("flash").failure(xhr);
-           });
+      this.saveAndExit("World created successfully");
     },
   },
 });

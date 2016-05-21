@@ -33,6 +33,18 @@ export default Ember.Service.extend({
     this._setMessage('notices', message);
   },
 
+  transitionNotice(transition, message, delay) {
+    if (!delay) {
+      delay = 200;
+    }
+    Ember.run.scheduleOnce('afterRender', transition.get("controller"),
+      function() {
+        Ember.run.later(()=> {
+          this.get("flash").notice(message);
+        }, delay);
+      });
+  },
+
   _jsonErrorsAsText(json) {
     if (json.errors) {
       json = json.errors;
@@ -98,6 +110,9 @@ export default Ember.Service.extend({
 
   _setMessage(messageName, message) {
     this.set(messageName, message);
+    if (message) {
+      window.scrollTo(0,0);
+    }
   },
 
   _clearMessage(messageName) {

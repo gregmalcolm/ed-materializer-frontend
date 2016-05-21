@@ -1,7 +1,6 @@
-//import Ember from 'ember';
-import BaseRoute from './base';
+import BaseWorldRoute from './base';
 
-export default BaseRoute.extend({
+export default BaseWorldRoute.extend({
   beforeModel(transition) {
     if (!this.get('session.isAuthenticated')) {
       this.redirectTo('show', transition.params);

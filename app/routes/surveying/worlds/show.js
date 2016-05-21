@@ -1,4 +1,4 @@
-import BaseRoute from './base';
+import BaseWorldRoute from './base';
 
-export default BaseRoute.extend({
+export default BaseWorldRoute.extend({
 });

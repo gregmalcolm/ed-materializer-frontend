@@ -14,18 +14,18 @@ if isEditing
       .row
         .medium-4.columns
           label X
-          = input value=world.system.x text='number' placeholder=-1111.5625 
+          = input value=world.system.x placeholder=-1111.5625 
         .medium-4.columns
           label Y
-          = input value=world.system.y text='number' placeholder=-134.21875 
+          = input value=world.system.y placeholder=-134.21875 
         .medium-4.columns.end
           label Z
-          = input value=world.system.z text='number' placeholder=65269.75
+          = input value=world.system.z placeholder=65269.75
       .row
         .medium-8.columns
           label
-            | World Type
-            select value=world.world_type
+            | World Type (#{world.world_type})
+            select value=world.world_type 
               option value=null 
                 | ?
               = each-in worldTypes as |group groupedWorlds|
@@ -38,7 +38,7 @@ if isEditing
           label Arrival Point
           .row
             .medium-4.columns
-              = input value=world.arrival_point type="number" placeholder="1323.53"
+              = input value=world.arrival_point placeholder="1323.53"
             .medium-6.columns.suffix
               | Ls
       .row
@@ -46,7 +46,7 @@ if isEditing
           label Earth Masses
           .row
             .medium-4.columns
-              = input value=world.mass type="number" step="0.1" placeholder="0.343"
+              = input value=world.mass placeholder="0.343"
             .medium-6.columns.suffix
               | * Earth's Mass
       .row
@@ -54,7 +54,7 @@ if isEditing
           label Radius
           .row
             .medium-4.columns
-              = input value=world.radius type="number" placeholder="5233"
+              = input value=world.radius placeholder="5233"
             .medium-6.columns.suffix
               | km
       .row
@@ -62,7 +62,7 @@ if isEditing
           label Gravity
           .row
             .medium-4.columns
-              = input value=world.gravity type="number" step="0.1" placeholder="0.56"
+              = input value=world.gravity placeholder="0.56"
             .medium-6.columns.suffix
               | G
       .row
@@ -70,7 +70,7 @@ if isEditing
           label Surface Temperature
           .row
             .medium-4.columns
-              = input value=world.surface_temp type="number" placeholder="323"
+              = input value=world.surface_temp placeholder="323"
             .medium-6.columns.suffix
               | K
       .row
@@ -91,21 +91,21 @@ if isEditing
           label Rock
           .row
             .medium-11.columns
-              = input value=world.rock_pct text='number' placeholder="66.2"
+              = input value=world.rock_pct placeholder="66.2"
             .medium-1.columns.suffix
               | %
         .medium-4.columns
           label Metal
           .row
             .medium-11.columns
-              = input value=world.metal_pct text='number' placeholder="23.3"
+              = input value=world.metal_pct placeholder="23.3"
             .medium-1.columns.suffix
               | %
         .medium-4.columns.end
           label Ice
           .row
             .medium-11.columns
-              = input value=world.ice_pct text='number' placeholder="10.5"
+              = input value=world.ice_pct placeholder="10.5"
             .medium-1.columns.suffix
               | %
       .row
@@ -119,7 +119,7 @@ else
       table
         tbody
           tr
-            td 
+            td style="width: 30%;" 
               strong System Coordinates
             td 
               if world.system.x

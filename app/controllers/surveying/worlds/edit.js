@@ -1,5 +1,9 @@
-import Ember from 'ember';
+import BaseWorldController from './base';
 
-export default Ember.Controller.extend({
-  session: Ember.inject.service('session'),
+export default BaseWorldController.extend({
+  actions: {
+    save() {
+      this.saveAndExit("World updated successfully");
+    },
+  },
 });
