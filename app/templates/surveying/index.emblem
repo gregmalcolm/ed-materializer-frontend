@@ -1,8 +1,8 @@
 =login-reminder
 .row
   .medium-12.columns
-    h5 Where are you surveying?
-=system-world-select world=world systemName=systemName worldName=worldName
+    h3 Where are you surveying?
+    =system-world-select world=world systemName=systemName worldName=worldName
 
 
 /.row

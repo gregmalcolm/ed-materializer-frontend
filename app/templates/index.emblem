@@ -1,4 +1,4 @@
 = link-to 'surveying' (query-params systemName='' worldName='') class='button large success'
-  | Go prospecting!
+  | Go surveying!
 
 = latest-surveys surveys=model

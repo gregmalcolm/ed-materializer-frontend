@@ -29,6 +29,7 @@ Router.map(function() {
       this.route('show', {path: '/:survey-id'});
     });
   });
+  this.route('not-found', { path: '*path' });
 });
 
 export default Router;

@@ -1,112 +1,192 @@
-.row
-  .medium-12.columns
-    h3 Surveying: World Details
-form{action 'create' on='submit'}
+if isEditing
   .row
-    .medium-4.columns
-      label System
-      = input value=systemName type='text' placeholder='Ceeckia ZQ-L c24-0' 
-    .medium-2.columns.end
-      label World
-      = input value=worldName type='text' placeholder='2'
-  .row
-    .medium-12.columns
-      legend System Coordinates
-  .row
-    .medium-2.columns
-      label X
-      = input value=world.system.x text='number' placeholder=-1111.5625 
-    .medium-2.columns
-      label Y
-      = input value=world.system.y text='number' placeholder=-134.21875 
-    .medium-2.columns.end
-      label Z
-      = input value=world.system.z text='number' placeholder=65269.75
-  .row
-    .medium-4.columns
-      label
-        | World Type
-        select value=world.world-type
-          option value=null 
-            | ?
-          = each-in worldTypes as |group groupedWorlds|
-            optgroup label=group
-            = each-in groupedWorlds as |key item|
-              option value=key disabled=item.disabled selected={eq key world.world_type}
-                item.name
-    .medium-3.columns.end
-      label Arrival Point
+    .medium-6.medium-centered.columns
       .row
         .medium-8.columns
-          = input value=world.arrival_point type="number" placeholder="1323.53"
-        .medium-4.columns.suffix
-          | Ls
+          label System
+          = input value=systemName type='text' placeholder='Ceeckia ZQ-L c24-0' 
+        .medium-4.columns.end
+          label World
+          = input value=worldName type='text' placeholder='2'
+      .row
+        .medium-12.columns
+          legend System Coordinates
+      .row
+        .medium-4.columns
+          label X
+          = input value=world.system.x text='number' placeholder=-1111.5625 
+        .medium-4.columns
+          label Y
+          = input value=world.system.y text='number' placeholder=-134.21875 
+        .medium-4.columns.end
+          label Z
+          = input value=world.system.z text='number' placeholder=65269.75
+      .row
+        .medium-8.columns
+          label
+            | World Type
+            select value=world.world_type
+              option value=null 
+                | ?
+              = each-in worldTypes as |group groupedWorlds|
+                optgroup label=group
+                = each-in groupedWorlds as |key item|
+                  option value=key disabled=item.disabled selected={eq key world.world_type}
+                    item.name
+      .row
+        .medium-12.columns.end
+          label Arrival Point
+          .row
+            .medium-4.columns
+              = input value=world.arrival_point type="number" placeholder="1323.53"
+            .medium-6.columns.suffix
+              | Ls
+      .row
+        .medium-12.columns.end
+          label Earth Masses
+          .row
+            .medium-4.columns
+              = input value=world.mass type="number" step="0.1" placeholder="0.343"
+            .medium-6.columns.suffix
+              | * Earth's Mass
+      .row
+        .medium-12.columns.end
+          label Radius
+          .row
+            .medium-4.columns
+              = input value=world.radius type="number" placeholder="5233"
+            .medium-6.columns.suffix
+              | km
+      .row
+        .medium-12.columns.end
+          label Gravity
+          .row
+            .medium-4.columns
+              = input value=world.gravity type="number" step="0.1" placeholder="0.56"
+            .medium-6.columns.suffix
+              | G
+      .row
+        .medium-12.columns.end
+          label Surface Temperature
+          .row
+            .medium-4.columns
+              = input value=world.surface_temp type="number" placeholder="323"
+            .medium-6.columns.suffix
+              | K
+      .row
+        .medium-8.columns.end
+          label
+            | Volcanism
+            select value=world.vulcanism_type
+              option value=null 
+                | ?
+              = each-in volcanismTypes as |key item|
+                option value=key disabled=item.disabled selected={eq key world.vulcanism_type}
+                  item.name
+      .row
+        .medium-12.columns
+          legend Composition
+      .row
+        .medium-4.columns
+          label Rock
+          .row
+            .medium-11.columns
+              = input value=world.rock_pct text='number' placeholder="66.2"
+            .medium-1.columns.suffix
+              | %
+        .medium-4.columns
+          label Metal
+          .row
+            .medium-11.columns
+              = input value=world.metal_pct text='number' placeholder="23.3"
+            .medium-1.columns.suffix
+              | %
+        .medium-4.columns.end
+          label Ice
+          .row
+            .medium-11.columns
+              = input value=world.ice_pct text='number' placeholder="10.5"
+            .medium-1.columns.suffix
+              | %
+      .row
+        .medium-12.columns
+          label Shared Notes
+          = textarea value=world.notes cols="80" rows="6"
+else
   .row
-    .medium-3.columns
-      label Earth Masses
-      .row
-        .medium-10.columns
-          = input value=world.mass type="number" step="0.1" placeholder="0.343"
-        .medium-2.columns.suffix
-          | Earths
-    .medium-3.columns.end
-      label Radius
-      .row
-        .medium-10.columns
-          = input value=world.radius type="number" placeholder="5233"
-        .medium-2.columns.suffix
-          | km
-  .row
-    .medium-3.columns
-      label Gravity
-      .row
-        .medium-10.columns
-          = input value=world.gravity type="number" step="0.1" placeholder="0.56"
-        .medium-2.columns.suffix
-          | G
-    .medium-3.columns.end
-      label Surface Temperature
-      .row
-        .medium-10.columns
-          = input value=world.surface_temp type="number" placeholder="323"
-        .medium-2.columns.suffix
-          | K
-  .row
-    .medium-4.columns.end
-      label
-        | Volcanism
-        select value=world.world-type
-          option value=null 
-            | ?
-          = each-in volcanismTypes as |key item|
-            option value=key disabled=item.disabled selected={eq key world.volcanism}
-              item.name
-  .row
-    .medium-12.columns
-      legend Comoposition
-  .row
-    .medium-2.columns
-      label Rock
-      .row
-        .medium-11.columns
-          = input value=world.rock_pct text='number' placeholder="66.2"
-        .medium-1.columns.suffix
-          | %
-    .medium-2.columns
-      label Metal
-      .row
-        .medium-11.columns
-          = input value=world.metal_pct text='number' placeholder="23.3"
-        .medium-1.columns.suffix
-          | %
-    .medium-2.columns.end
-      label Ice
-      .row
-        .medium-11.columns
-          = input value=world.ice_pct text='number' placeholder="10.5"
-        .medium-1.columns.suffix
-          | %
-  .row
-    .medium-6.columns
-      label Shared Notes
-      = textarea value=world.notes cols="80" rows="6"
+    .medium-8.medium-centered.columns
+      h5 #{world.system_name} #{world.world}
+      table
+        tbody
+          tr
+            td 
+              strong System Coordinates
+            td 
+              if world.system.x
+                | #{world.system.x}, #{world.system.y}, #{world.system.z}
+          tr
+            td
+              strong World Type
+            td
+              world.world_type
+          tr
+            td
+              strong Arrival Point
+            td
+              if world.arrival_point
+                world.arrival_point
+                '
+                | Ls
+              
+          tr
+            td
+              strong Earth Masses
+            td
+              if world.mass
+                world.mass
+                '
+                | * Earth's Mass
+          tr
+            td
+              strong Radius
+            td
+              if world.radius
+                world.radius
+                '
+                | km
+          tr
+            td
+              strong Gravity
+            td
+              if world.gravity
+                world.gravity
+                '
+                | G
+          tr
+            td
+              strong Surface Temperature
+            td
+              if world.surface_temp
+                world.surface_temp
+                '
+                | K
+          tr
+            td
+              strong Volcanism
+            td
+              world.vulcanism_type
+          tr
+            td
+              strong Composition
+            td
+              if world.rock_pct
+                div #{world.rock_pct}% Rock
+              if world.metal_pct
+                div #{world.metal_pct}% Metal
+              if world.ice_pct
+                div #{world.ice_pct}% Ice
+          tr
+            td
+              strong Shared notes
+            td
+              world.notes

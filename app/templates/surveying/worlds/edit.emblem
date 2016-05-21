@@ -1,7 +1,12 @@
-= world-form world=model systemName=model.system_name worldName=model.world isEditing=true
+form{action 'create' on='submit'}
 .row
-  .medium-12.columns.button-bar
-    button.button type="submit" 
-      | Save
-    = link-to 'surveying.worlds.show' model.id class="button secondary"
-      | Cancel
+  .medium-12.columns
+    h3 Surveying: Modify World Details
+    form{action 'save' on='submit'}
+      = world-form world=model systemName=model.system_name worldName=model.world isEditing=true
+      .row
+        .medium-12.columns.button-bar
+          button.button type="submit" 
+            | Save
+          = link-to 'surveying.worlds.show' model.id class="button secondary"
+            | Cancel
