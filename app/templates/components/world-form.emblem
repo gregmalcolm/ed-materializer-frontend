@@ -24,14 +24,14 @@ if isEditing
       .row
         .medium-8.columns
           label
-            | World Type (#{world.world_type})
-            select value=world.world_type 
-              option value=null 
+            | World Type
+            = x-select value=world.world_type
+              x-option value=null 
                 | ?
               = each-in worldTypes as |group groupedWorlds|
                 optgroup label=group
                 = each-in groupedWorlds as |key item|
-                  option value=key disabled=item.disabled selected={eq key world.world_type}
+                  x-option value=key
                     item.name
       .row
         .medium-12.columns.end
@@ -77,11 +77,11 @@ if isEditing
         .medium-8.columns.end
           label
             | Volcanism
-            select value=world.vulcanism_type
-              option value=null 
+            x-select value=world.vulcanism_type
+              x-option value=null 
                 | ?
               = each-in volcanismTypes as |key item|
-                option value=key disabled=item.disabled selected={eq key world.vulcanism_type}
+                x-option value=key
                   item.name
       .row
         .medium-12.columns

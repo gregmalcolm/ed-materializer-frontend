@@ -35,12 +35,24 @@ export default Ember.Service.extend({
 
   transitionNotice(transition, message, delay) {
     if (!delay) {
-      delay = 200;
+      delay = 140;
     }
     Ember.run.scheduleOnce('afterRender', transition.get("controller"),
       function() {
         Ember.run.later(()=> {
           this.get("flash").notice(message);
+        }, delay);
+      });
+  },
+
+  transitionFailure(transition, xhr, delay) {
+    if (!delay) {
+      delay = 140;
+    }
+    Ember.run.scheduleOnce('afterRender', transition.get("controller"),
+      function() {
+        Ember.run.later(()=> {
+          this.get("flash").failure(xhr);
         }, delay);
       });
   },
