@@ -16,9 +16,9 @@ export default Ember.Controller.extend({
     this._findSystem(system)
         .then(system => {
           return system.save()
-                       .then(system => {
+                       .then(() => {
                          model.save()
-                              .then(world => {
+                              .then(() => {
                                 this.transitionToRoute('surveying.worlds.show', model.id)
                                     .then((transition) => {
                                       this.get("flash").transitionNotice(transition, successMessage);
@@ -31,7 +31,7 @@ export default Ember.Controller.extend({
                                  });
                               });
                        }, this._reject.bind(this));
-        }, this._reject.bind(this))
+        }, this._reject.bind(this));
   },
 
   _findSystem(model) {
@@ -39,9 +39,9 @@ export default Ember.Controller.extend({
       let system = this.get('store').peekRecord('system',
                                                 model.get('id'));
       if (system) {
-        resolve(system)
+        resolve(system);
       } else {
-        let systems = this.get('store').queryRecord('system', {
+        this.get('store').queryRecord('system', {
           system: model.get('system'),
         })
         .then(systems => {
