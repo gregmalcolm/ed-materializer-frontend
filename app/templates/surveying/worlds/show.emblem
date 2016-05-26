@@ -9,5 +9,5 @@
         = if session.isAuthenticated
           = link-to 'surveying.worlds.edit' model.id class='button primary'
             | Edit
-        = link-to 'surveying.worlds.surveys' class='button success'
+        = link-to 'surveying.worlds.surveys' model.id class='button success'
           | Surveys

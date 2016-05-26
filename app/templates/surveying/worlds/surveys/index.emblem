@@ -1,0 +1,48 @@
+.row
+  .medium-12.columns
+    if model.surveys
+      h5 Current surveys
+      table
+        thead
+          tr
+            th
+            th
+              | Date
+            th
+              | Owner
+            th
+              | Surveyors
+            th
+              | Resource
+        tbody
+          each sortedSurveys as |survey|
+                tr
+                  td.tight
+                    if survey.commander
+                      if survey.isOwner
+                        =link-to 'surveying.worlds.surveys.edit' survey.world.id survey.id class='button small success'
+                          | Edit
+                      else
+                        =link-to 'surveying.worlds.surveys.show' survey.world.id survey.id class='button small secondary'
+                          | View
+                  td
+                    = moment-format survey.surveyed_at
+                  td
+                    = survey.commander
+                  td
+                    = survey.surveyed_by
+                  td
+                    = survey.resource
+    else
+      | No surveys recorded for this world. Yet.
+  .row
+    .medium-12.columns.button-bar
+      =link-to 'surveying.worlds.show' model.world.id class='button primary'
+        | World Details 
+      if session.isAuthenticated
+        =link-to 'surveying.worlds.surveys.new' model.world.id class='button success'
+          | Start a New Survey 
+      else
+        .row
+          .medium-12.columns.button-bar
+            legend Sign in to start a new Survey

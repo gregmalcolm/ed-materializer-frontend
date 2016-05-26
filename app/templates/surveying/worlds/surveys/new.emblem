@@ -1,0 +1,8 @@
+form{action 'create' on='submit'}
+  = survey-form editing=true model=model
+  .row
+    .medium-12.columns.button-bar
+      button.button.success type='submit'
+        | Create
+      link-to 'surveying.worlds.surveys' model.world.id class='button secondary'
+        | Cancel

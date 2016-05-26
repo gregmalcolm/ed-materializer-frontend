@@ -1,45 +1,50 @@
-.row
-  .medium-12.columns
-    h3 Survey of #{presentSystemName}
 if editing
   .row
+    .medium-3.columns
+      | &nbsp;
     .medium-4.columns
       label Surveyors
-      = input value=model.survey.surveyed_by type='text' placeholder='Kamzel, Dr.Kaii'
+      = input value=model.surveyed_by type='text' placeholder='Kamzel, Dr.Kaii'
       p.help-text
         | When entering multiple surveyors please separate by commas
     .medium-2.columns.end
       label Date
-      pikaday-input value=model.survey.surveyed_at format='YYYY-MM-DD'
+      pikaday-input value=model.surveyed_at format='YYYY-MM-DD'
 else
   .row
-    .medium-6.columns
+    .medium-3.columns
+      | &nbsp;
+    .medium-6.columns.end
       table
         tbody
           tr
             td
               | Record Owned By
             td
-              = model.survey.commander 
+              = model.commander 
           tr
             td
               | Surveyors
             td
-              = model.survey.surveyed_by 
+              = model.surveyed_by 
           tr
             td
               | Date
             td
-              = moment-format model.survey.surveyed_at
+              = moment-format model.surveyed_at
 .row
-  .medium-12.columns
+  .medium-2.columns
+    | &nbsp;
+  .medium-9.columns.end
     legend Materials found
 .row
   .medium-2.columns
-    =material-survey rarity="Very Common" survey=model.survey editing=editing
+    | &nbsp;
   .medium-2.columns
-    =material-survey rarity="Common" survey=model.survey editing=editing
+    =material-survey rarity="Very Common" survey=model editing=editing
   .medium-2.columns
-    =material-survey rarity="Rare" survey=model.survey editing=editing
+    =material-survey rarity="Common" survey=model editing=editing
+  .medium-2.columns
+    =material-survey rarity="Rare" survey=model editing=editing
   .medium-2.columns.end
-    =material-survey rarity="Very Rare" survey=model.survey editing=editing
+    =material-survey rarity="Very Rare" survey=model editing=editing

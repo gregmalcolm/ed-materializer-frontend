@@ -23,11 +23,6 @@ Router.map(function() {
         this.route('show', {path: '/:survey-id'});
       });
     });
-    this.route('system', {path: '/:system-name/:world-name'}, function() {
-      this.route('new');
-      this.route('edit', {path: '/:survey-id/edit'});
-      this.route('show', {path: '/:survey-id'});
-    });
   });
   this.route('not-found', { path: '*path' });
 });

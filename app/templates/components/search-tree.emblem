@@ -9,9 +9,9 @@ if systems
               = system.system
               '
               = star.star
-          each system.surveying as |world|
+          each system.worlds as |world|
             li
-              = link-to 'surveying' (query-params systemName=system.system worldName=world.world)
+              = link-to 'surveying.worlds.show' world.id
                 = system.system
                 '
                 = world.world
