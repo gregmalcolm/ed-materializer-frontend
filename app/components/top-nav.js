@@ -3,6 +3,7 @@ import ENV from '../config/environment';
 
 export default Ember.Component.extend({
   session: Ember.inject.service('session'),
+  routing: Ember.inject.service('-routing'),
   q: null,
   envText: ENV.envText,
 
@@ -13,5 +14,13 @@ export default Ember.Component.extend({
         this.$("#responsive-menu").hide();
       }
     });
+  },
+
+  actions: {
+    search() {
+      this.get('routing').transitionTo('search', undefined, {
+        q: this.get('q')
+      });
+    },
   },
 });

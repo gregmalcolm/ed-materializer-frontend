@@ -13,11 +13,13 @@
         span.title-suffix ALPHA
         .title-ed Ed
   .top-bar-left
-    ul.menu
-      li
-        = input placeholder="e.g., Achenar" class="input-group-field" value=q
-      li
-        = link-to "search" (query-params q=q) class="button" | Search 
+    form{action 'search' on='submit'}
+      ul.menu
+        li
+          = input placeholder="e.g., Achenar" class="input-group-field" value=q
+        li
+          button.button type="submit" 
+            | Search
   .top-bar-right
     ul.dropdown.menu.show-for-medium data-dropdown-menu="data-dropdown-menu" class=session.isAuthenticated:show:hide
       li 
