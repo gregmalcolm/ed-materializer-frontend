@@ -1,6 +1,6 @@
-if systems
+if results
   ul
-    each systems as |system|
+    each results as |system|
       li
         = system.system
         ul
