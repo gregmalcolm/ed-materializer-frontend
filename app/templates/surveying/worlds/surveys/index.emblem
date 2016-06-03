@@ -20,10 +20,10 @@
                   td.tight
                     if survey.commander
                       if survey.isOwner
-                        =link-to 'surveying.worlds.surveys.edit' survey.world.id survey.id class='button small success'
+                        = link-to 'surveying.surveys.edit' survey.id class='button small success'
                           | Edit
                       else
-                        =link-to 'surveying.worlds.surveys.show' survey.world.id survey.id class='button small secondary'
+                        = link-to 'surveying.surveys.show' survey.id class='button small secondary'
                           | View
                   td
                     = moment-format survey.surveyed_at
@@ -37,10 +37,10 @@
       | No surveys recorded for this world. Yet.
   .row
     .medium-12.columns.button-bar
-      =link-to 'surveying.worlds.show' model.world.id class='button primary'
+      = link-to 'surveying.worlds.show' model.world.id class='button primary'
         | World Details 
       if session.isAuthenticated
-        =link-to 'surveying.worlds.surveys.new' model.world.id class='button success'
+        = link-to 'surveying.worlds.surveys.new' model.world.id class='button success'
           | Start a New Survey 
       else
         .row

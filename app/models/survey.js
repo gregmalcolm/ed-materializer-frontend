@@ -6,6 +6,7 @@ export default DS.Model.extend({
   session: Ember.inject.service('session'),
   world:       DS.belongsTo('world'),
   basecamp:    DS.belongsTo('basecamp'),
+  basecamp_id: DS.attr('number'),
   //system:      DS.belongsTo('system'),
   commander:   DS.attr('string'),
   resource:    DS.attr('string', {defaultValue: 'BINARY'}),

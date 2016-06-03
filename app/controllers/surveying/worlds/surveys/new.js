@@ -12,8 +12,7 @@ export default Ember.Controller.extend({
       });
       survey.save()
             .then((survey) => {
-              this.transitionToRoute('surveying.worlds.surveys.edit',
-                                     survey.get('world.id'),
+              this.transitionToRoute('surveying.surveys.edit',
                                      survey.get('id'))
                   .then((transition) => {
                      this.get("flash").transitionNotice(transition, "Survey created successfully");

@@ -19,9 +19,11 @@ Router.map(function() {
       this.route('show', {path: '/:world-id'});
       this.route('surveys', {path:'/:world-id/surveys'}, function() {
         this.route('new');
-        this.route('edit', {path: '/:survey-id/edit'});
-        this.route('show', {path: '/:survey-id'});
       });
+    });
+    this.route('surveys', function() {
+      this.route('edit', {path: '/:survey-id/edit'});
+      this.route('show', {path: '/:survey-id'});
     });
   });
   this.route('not-found', { path: '*path' });
