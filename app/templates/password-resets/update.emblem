@@ -1,0 +1,13 @@
+h2 Change your password
+.sign-in-content
+  form{action 'update' on='submit'}
+    label Password
+    = input value=password type='password' autocomplete='off'
+    label Password Confirmation
+    = input value=passwordConfirmation type='password' autocomplete='off'
+    .actions
+      br
+    .text-center
+      button.button type="submit" 
+        | Change password
+

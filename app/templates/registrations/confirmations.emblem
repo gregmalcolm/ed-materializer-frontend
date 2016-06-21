@@ -1,5 +1,5 @@
+h2 Resend confirmation instructions
 .sign-in-content
-  h2 Resend confirmation instructions
   form{action 'confirm' on='submit'}
       .field
         f.label email

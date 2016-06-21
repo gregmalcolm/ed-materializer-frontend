@@ -9,3 +9,6 @@
     .text-center
       button.button type='submit' 
         | Sign in
+  .text-center
+    link-to 'password-resets'
+      | Forgot your password?

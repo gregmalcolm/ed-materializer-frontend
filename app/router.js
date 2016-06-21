@@ -11,6 +11,9 @@ Router.map(function() {
   this.route('registrations', function() {
     this.route('confirm');
   });
+  this.route('password-resets', function() {
+    this.route('update');
+  });
   this.route('search');
   this.route('surveying', function() {
     this.route('worlds', function() {
