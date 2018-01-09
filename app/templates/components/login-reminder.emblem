@@ -1,7 +1,0 @@
-unless session.isAuthenticated
-  .warning.callout data-closable='fade-out'
-    h5 Please sign in to continue
-    p You need to be signed in to start the survey.
-    /button.close-button aria-label="Dismiss alert" type="button" data-close="data-close"
-      /span aria-hidden="true"
-        /| &times;

@@ -1,9 +1,0 @@
-h2 Forgot your password?
-.sign-in-content
-  
-  form{action 'requestPasswordReset' on='submit'}
-    label Email
-    = input value=email type='text' placeholder='jameson@founders.net' autofocus=true
-    .text-center
-      button.button type='submit' 
-        | Send password reset email

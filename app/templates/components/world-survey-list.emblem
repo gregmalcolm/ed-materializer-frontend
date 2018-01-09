@@ -1,7 +1,0 @@
-if worldSurvey
-  if discoveredMaterialsList
-    ul
-     li
-      = link-to 'surveying.worlds.surveys' worldSurvey.world.id
-        | Materials discovered: 
-        = discoveredMaterialsList

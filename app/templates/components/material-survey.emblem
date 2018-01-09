@@ -1,3 +1,0 @@
-table
-  each materials as |mat|
-    = material-survey-item survey=survey mat=mat editing=editing

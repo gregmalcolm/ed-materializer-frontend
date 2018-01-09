@@ -1,5 +1,0 @@
-if survey
-  if discoveredMaterialsList
-    = discoveredMaterialsList
-  else
-    | None yet

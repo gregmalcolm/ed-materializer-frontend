@@ -1,6 +1,0 @@
-.big-search
-  form
-    .input-group
-      /legend.input-group-legend Search
-      = input placeholder="Eg, Sol, Shinrarta, Ceeckia" class="input-group-field"
-      = link-to "search" class="input-group-button button" | Search 
